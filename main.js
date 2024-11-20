@@ -1,0 +1,7516 @@
+
+var map3DElement
+let polygonOptions
+let towerPolygon
+let polylineOptions
+let RoadA
+
+const pathsReal = {
+    features: [
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "ML",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "ML",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.542474, 43.468791],
+            [-80.542495, 43.468823],
+            [-80.542576, 43.468794],
+            [-80.542708, 43.468985],
+            [-80.542805, 43.469132],
+            [-80.542917, 43.469093],
+            ],
+            type: "LineString",
+        },
+        id: "012de41e8a7de943de9784aea4cc51fd",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "SCH",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.540148, 43.469117],
+            type: "Point",
+        },
+        id: "029b730ebfdfde16764cbcc6c608e963",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "walkway",
+            start: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.549645, 43.471864],
+            [-80.549058, 43.47207],
+            [-80.548692, 43.472182],
+            [-80.548602, 43.472199],
+            [-80.548303, 43.471997],
+            [-80.548054, 43.471931],
+            [-80.547959, 43.471866],
+            [-80.54791, 43.471778],
+            [-80.547736, 43.471675],
+            [-80.547618, 43.471633],
+            [-80.547352, 43.47156],
+            [-80.547262, 43.471576],
+            [-80.547169, 43.47162],
+            [-80.54694, 43.471568],
+            [-80.546502, 43.471646],
+            [-80.546394, 43.471665],
+            [-80.545975, 43.471578],
+            [-80.545833, 43.471627],
+            [-80.545701, 43.471602],
+            ],
+            type: "LineString",
+        },
+        id: "035031117345ebb9fa6578461b8bf76b",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "tunnel",
+            start: {
+            buildingCode: "TC",
+            floor: "B",
+            },
+            end: {
+            buildingCode: "SCH",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.541151, 43.468832],
+            [-80.54114, 43.468816],
+            [-80.540534, 43.469026],
+            ],
+            type: "LineString",
+        },
+        id: "0618ed175f581b05bf90fcd9a939a86a",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "walkway",
+            start: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.542127, 43.469521],
+            [-80.54207, 43.469434],
+            [-80.542503, 43.469273],
+            [-80.542392, 43.469099],
+            [-80.542561, 43.469037],
+            ],
+            type: "LineString",
+        },
+        id: "06f13cfc66c1e158b5f86aa8e91e4fae",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "PAS",
+                floor: "1",
+                level: 0,
+            },
+            {
+                buildingCode: "PAS",
+                floor: "2",
+                level: 1,
+            },
+            {
+                buildingCode: "PAS",
+                floor: "3",
+                level: 2,
+            },
+            {
+                buildingCode: "PAS",
+                floor: "4",
+                level: 3,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.542041, 43.467473],
+            type: "Point",
+        },
+        id: "0a9c9d5edfc5931995dc2da8112b284e",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "walkway",
+            start: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.54207, 43.469434],
+            [-80.54205, 43.469441],
+            [-80.541715, 43.469565],
+            [-80.541795, 43.470016],
+            [-80.541772, 43.47009],
+            [-80.541326, 43.470253],
+            [-80.541076, 43.470248],
+            ],
+            type: "LineString",
+        },
+        id: "0d6b8c97e33f2b21416e27688b5300fc",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "walkway",
+            start: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.544003, 43.472963],
+            [-80.543942, 43.472857],
+            [-80.543894, 43.472787],
+            [-80.543755, 43.472721],
+            [-80.543599, 43.472654],
+            [-80.543439, 43.472606],
+            [-80.543193, 43.472602],
+            [-80.542769, 43.472609],
+            [-80.542576, 43.472622],
+            [-80.542442, 43.472672],
+            ],
+            type: "LineString",
+        },
+        id: "0de243b2ab436f33eeb25dcac60b9eb8",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "DWE",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.540495, 43.469798],
+            type: "Point",
+        },
+        id: "0e405e516873db7d077d772f696efd1e",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "E3",
+            floor: "3",
+            },
+            end: {
+            buildingCode: "E3",
+            floor: "3",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.541042, 43.471928],
+            [-80.541153, 43.472087],
+            [-80.541102, 43.472106],
+            ],
+            type: "LineString",
+        },
+        id: "0e7f628585679fb6764fcfbb524d924a",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "BMH",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.545456, 43.473893],
+            type: "Point",
+        },
+        id: "0fb00f8776f2df48a7d853c4b977b3b0",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "EV1",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "EV1",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.54226, 43.468468],
+            [-80.542507, 43.468379],
+            [-80.542832, 43.468264],
+            [-80.542741, 43.468134],
+            [-80.54288, 43.468083],
+            [-80.542907, 43.468073],
+            ],
+            type: "LineString",
+        },
+        id: "1040ca658919d59fa59aeccf91663336",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "AL",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "AL",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.541934, 43.468825],
+            [-80.541821, 43.468864],
+            [-80.541925, 43.46901],
+            ],
+            type: "LineString",
+        },
+        id: "10458f3f4c6469c14645279a6f34c112",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "SLC",
+                floor: "2",
+                level: 1,
+            },
+            {
+                buildingCode: "SLC",
+                floor: "3",
+                level: 2,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.545335, 43.471961],
+            type: "Point",
+        },
+        id: "1193a88bd907de50cb1c70d13a9f3062",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "E6",
+                floor: "1",
+                level: 0,
+            },
+            {
+                buildingCode: "E6",
+                floor: "2",
+                level: 1,
+            },
+            {
+                buildingCode: "E6",
+                floor: "3",
+                level: 2,
+            },
+            {
+                buildingCode: "E6",
+                floor: "4",
+                level: 3,
+            },
+            {
+                buildingCode: "E6",
+                floor: "5",
+                level: 4,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.538799, 43.473206],
+            type: "Point",
+        },
+        id: "15b687e2ca04ba33ffd502f66e3b212c",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "ML",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "ML",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.542809, 43.468947],
+            [-80.542561, 43.469037],
+            ],
+            type: "LineString",
+        },
+        id: "15b7279bbdd2a911d465dfdd5c2e854f",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "EV3",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.543551, 43.468112],
+            type: "Point",
+        },
+        id: "1933ff9f9d2663e9b7568f74c0e63520",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "E2",
+                floor: "1",
+                level: 0,
+            },
+            {
+                buildingCode: "E2",
+                floor: "2",
+                level: 1,
+            },
+            {
+                buildingCode: "E2",
+                floor: "3",
+                level: 2,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.540234, 43.470901],
+            type: "Point",
+        },
+        id: "199561992f22b8fb40621df0cffe00c9",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "C2",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "C2",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.543119, 43.472165],
+            [-80.543257, 43.472114],
+            [-80.543068, 43.471836],
+            ],
+            type: "LineString",
+        },
+        id: "199bb0250f1e38a2d0325483c16d151f",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "EXP",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.54588, 43.47331],
+            type: "Point",
+        },
+        id: "1ad35eff5433dd389f66dc6250034f96",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "EIT",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "EIT",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.541964, 43.47141],
+            [-80.541941, 43.471334],
+            ],
+            type: "LineString",
+        },
+        id: "1b99bcf4c1b271753f1a7ac78adc02ed",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "tunnel",
+            start: {
+            buildingCode: "AL",
+            floor: "B",
+            },
+            end: {
+            buildingCode: "TC",
+            floor: "B",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.541822, 43.468665],
+            [-80.541777, 43.468598],
+            [-80.54114, 43.468816],
+            [-80.541151, 43.468832],
+            ],
+            type: "LineString",
+        },
+        id: "1d48284316b2994dbb926c58dd4add50",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "DP",
+                floor: "1",
+                level: 0,
+            },
+            {
+                buildingCode: "DP",
+                floor: "2",
+                level: 1,
+            },
+            {
+                buildingCode: "DP",
+                floor: "3",
+                level: 2,
+            },
+            {
+                buildingCode: "DP",
+                floor: "4",
+                level: 3,
+            },
+            {
+                buildingCode: "DP",
+                floor: "5",
+                level: 4,
+            },
+            {
+                buildingCode: "DP",
+                floor: "6",
+                level: 5,
+            },
+            {
+                buildingCode: "DP",
+                floor: "7",
+                level: 6,
+            },
+            {
+                buildingCode: "DP",
+                floor: "8",
+                level: 7,
+            },
+            {
+                buildingCode: "DP",
+                floor: "9",
+                level: 8,
+            },
+            {
+                buildingCode: "DP",
+                floor: "10",
+                level: 9,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.542254, 43.469706],
+            type: "Point",
+        },
+        id: "1d5af470025b4e1853317a64057231f8",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "bridge",
+            start: {
+            buildingCode: "E3",
+            floor: "4",
+            },
+            end: {
+            buildingCode: "E5",
+            floor: "3",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.540479, 43.471916],
+            [-80.540492, 43.471936],
+            [-80.540141, 43.472145],
+            [-80.539917, 43.472278],
+            [-80.539877, 43.472305],
+            [-80.539852, 43.472329],
+            [-80.539844, 43.472355],
+            [-80.539845, 43.472375],
+            [-80.539862, 43.472426],
+            [-80.539872, 43.472442],
+            ],
+            type: "LineString",
+        },
+        id: "1dd33299367c1b5af6a08004d720433c",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "EIT",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "EIT",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.542173, 43.471786],
+            [-80.542099, 43.47168],
+            [-80.542104, 43.47161],
+            [-80.541964, 43.47141],
+            ],
+            type: "LineString",
+        },
+        id: "1df7d248680d5ad1754b27464819826b",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "bridge",
+            start: {
+            buildingCode: "DC",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "C2",
+            floor: "3",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.542417, 43.472414],
+            [-80.542752, 43.472294],
+            ],
+            type: "LineString",
+        },
+        id: "1ff7d0d593cf9579c422f7f8f12cd04c",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "tunnel",
+            start: {
+            buildingCode: "E2",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "RCH",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.540937, 43.470649],
+            [-80.540889, 43.470582],
+            [-80.540931, 43.470523],
+            [-80.540849, 43.470407],
+            ],
+            type: "LineString",
+        },
+        id: "20ed00f592bee5e4a89df34663da942b",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "walkway",
+            start: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.540495, 43.469798],
+            [-80.540585, 43.469765],
+            [-80.540456, 43.469574],
+            [-80.540328, 43.469383],
+            ],
+            type: "LineString",
+        },
+        id: "22bb3fed7d1a6105e45f4d8f2cad587c",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "ML",
+                floor: "1",
+                level: 0,
+            },
+            {
+                buildingCode: "ML",
+                floor: "2",
+                level: 1,
+            },
+            {
+                buildingCode: "ML",
+                floor: "3",
+                level: 2,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.542809, 43.468947],
+            type: "Point",
+        },
+        id: "23188a7f8e79853766095220d6c13f3a",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "PHY",
+            floor: "3",
+            },
+            end: {
+            buildingCode: "PHY",
+            floor: "3",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.541941, 43.471334],
+            [-80.541429, 43.4706],
+            [-80.541327, 43.470458],
+            [-80.541241, 43.470489],
+            [-80.541217, 43.470456],
+            [-80.541083, 43.470504],
+            [-80.541133, 43.470578],
+            [-80.541035, 43.470613],
+            ],
+            type: "LineString",
+        },
+        id: "234eefd3bccc29f91b6e7b9088714526",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "EV1",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "EV1",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.542289, 43.468512],
+            [-80.54226, 43.468468],
+            [-80.542228, 43.468479],
+            [-80.542136, 43.468349],
+            [-80.542154, 43.468343],
+            [-80.542129, 43.468305],
+            ],
+            type: "LineString",
+        },
+        id: "2743c6b1d0779e9d497b5e70bc38a938",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "TC",
+            floor: "B",
+            },
+            end: {
+            buildingCode: "TC",
+            floor: "B",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.541216, 43.468928],
+            [-80.541151, 43.468832],
+            ],
+            type: "LineString",
+        },
+        id: "27ddc94b0b7cc93ce6130e817cd4a3b4",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "walkway",
+            start: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.538859, 43.470529],
+            [-80.538898, 43.470584],
+            [-80.538663, 43.470667],
+            [-80.53851, 43.470684],
+            [-80.538352, 43.470731],
+            [-80.538229, 43.470766],
+            [-80.538189, 43.470795],
+            [-80.537876, 43.470711],
+            [-80.537766, 43.470918],
+            [-80.537651, 43.471061],
+            [-80.537572, 43.471136],
+            [-80.537083, 43.470851],
+            [-80.536516, 43.470527],
+            [-80.536394, 43.470375],
+            [-80.536338, 43.470347],
+            [-80.536299, 43.470354],
+            ],
+            type: "LineString",
+        },
+        id: "287e045c1ff79149662e678e67f4f960",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "PAS",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "PAS",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.542693, 43.467775],
+            [-80.54241, 43.46738],
+            [-80.542474, 43.467356],
+            [-80.54243, 43.467294],
+            [-80.542063, 43.467428],
+            [-80.542041, 43.467473],
+            ],
+            type: "LineString",
+        },
+        id: "28d5d43b874261c3d018d2078bd940ce",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "B1",
+                floor: "1",
+                level: 0,
+            },
+            {
+                buildingCode: "B1",
+                floor: "2",
+                level: 1,
+            },
+            {
+                buildingCode: "B1",
+                floor: "3",
+                level: 2,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.543114, 43.47113],
+            type: "Point",
+        },
+        id: "2c7c23a38045bfb57bc333a24f4f328a",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "tunnel",
+            start: {
+            buildingCode: "ML",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "AL",
+            floor: "B",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.542474, 43.468791],
+            [-80.542391, 43.468666],
+            [-80.541934, 43.468825],
+            ],
+            type: "LineString",
+        },
+        id: "2d1c96b4e7b47d99de6498eb6d3c2271",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "E2",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "E2",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.540307, 43.470875],
+            [-80.540937, 43.470649],
+            ],
+            type: "LineString",
+        },
+        id: "2eb00ee0b5f5af6ef5e5bf4b7e5c7f8b",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "DC",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "DC",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.54237, 43.472626],
+            [-80.542008, 43.472756],
+            [-80.541649, 43.472233],
+            ],
+            type: "LineString",
+        },
+        id: "2ef5e55e160b86652253f279b54ff19f",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "EV1",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.542859, 43.468006],
+            type: "Point",
+        },
+        id: "3009499dde08fbb8d3826f5e6ab8f682",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "walkway",
+            start: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.55175, 43.471197],
+            [-80.551529, 43.471205],
+            [-80.551335, 43.471198],
+            [-80.551043, 43.471291],
+            [-80.550985, 43.471279],
+            [-80.550919, 43.471231],
+            [-80.550427, 43.471398],
+            ],
+            type: "LineString",
+        },
+        id: "30275609a1abb788a2d0c5697eaf1a12",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "E7",
+            floor: "3",
+            },
+            end: {
+            buildingCode: "E7",
+            floor: "3",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.539816, 43.472831],
+            [-80.539582, 43.472921],
+            [-80.539349, 43.473011],
+            ],
+            type: "LineString",
+        },
+        id: "307ac69fce0d068f5a26b3aad5fb6a64",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "SLC",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "SLC",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.54564, 43.472441],
+            [-80.545486, 43.472412],
+            [-80.545306, 43.472476],
+            [-80.54505, 43.472099],
+            [-80.545151, 43.472061],
+            [-80.545218, 43.472028],
+            [-80.545264, 43.471991],
+            [-80.545301, 43.471942],
+            [-80.545361, 43.471897],
+            ],
+            type: "LineString",
+        },
+        id: "30e2e465a954db2e8e314340cfc7ffef",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "DWE",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.538859, 43.470529],
+            type: "Point",
+        },
+        id: "325db4bd37ba45f1439cb962978a4f5d",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "EV2",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "EV3",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [-80.543463, 43.468092],
+            type: "Point",
+        },
+        id: "32c1ede6632e78f2b59d47921fc7a77d",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "E3",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "E3",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.541173, 43.472123],
+            [-80.541031, 43.47192],
+            [-80.54092, 43.471761],
+            [-80.540606, 43.471308],
+            ],
+            type: "LineString",
+        },
+        id: "343acbef7377c06c746da9426374a416",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "EV2",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "EV2",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.542959, 43.467997],
+            [-80.542876, 43.46803],
+            ],
+            type: "LineString",
+        },
+        id: "34437f84d384d3f2fc5c6eb01b227c88",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "walkway",
+            start: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.553819, 43.47015],
+            [-80.553712, 43.47013],
+            [-80.553595, 43.470143],
+            [-80.553508, 43.470171],
+            [-80.55317, 43.470327],
+            [-80.553114, 43.470439],
+            [-80.553258, 43.470683],
+            [-80.553332, 43.470869],
+            [-80.553356, 43.470998],
+            [-80.5533, 43.471041],
+            [-80.553087, 43.471068],
+            ],
+            type: "LineString",
+        },
+        id: "34bacc6072e373c787bab243d30a7580",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "E5",
+                floor: "1",
+                level: 0,
+            },
+            {
+                buildingCode: "E5",
+                floor: "2",
+                level: 1,
+            },
+            {
+                buildingCode: "E5",
+                floor: "3",
+                level: 2,
+            },
+            {
+                buildingCode: "E5",
+                floor: "4",
+                level: 3,
+            },
+            {
+                buildingCode: "E5",
+                floor: "5",
+                level: 4,
+            },
+            {
+                buildingCode: "E5",
+                floor: "6",
+                level: 5,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.539945, 43.47278],
+            type: "Point",
+        },
+        id: "34d55977a70a996253da0567ad1f1051",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "EV2",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "EV2",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.54288, 43.468083],
+            [-80.542859, 43.468052],
+            [-80.542917, 43.468031],
+            [-80.542953, 43.467962],
+            [-80.543282, 43.467836],
+            [-80.543463, 43.468092],
+            ],
+            type: "LineString",
+        },
+        id: "35c8281d2e761a7a6ede280d848f21bc",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "MC",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.543739, 43.472531],
+            type: "Point",
+        },
+        id: "35ffb44ad76a39fbe9732e8c93bbe3a7",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "DWE",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "DWE",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.540495, 43.469798],
+            [-80.539685, 43.470083],
+            ],
+            type: "LineString",
+        },
+        id: "379ff733b2d5f549ec560ce70dd39884",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "SLC",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "SLC",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.545361, 43.471897],
+            [-80.545496, 43.471556],
+            [-80.545701, 43.471602],
+            ],
+            type: "LineString",
+        },
+        id: "37d2b9275e641927a5c35ad39218f881",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "walkway",
+            start: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.54588, 43.47331],
+            [-80.545638, 43.472975],
+            [-80.545548, 43.472864],
+            [-80.545366, 43.47262],
+            ],
+            type: "LineString",
+        },
+        id: "37eb38cbf789686364ed5b993ffb018b",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "CPH",
+                floor: "1",
+                level: 0,
+            },
+            {
+                buildingCode: "CPH",
+                floor: "2",
+                level: 1,
+            },
+            {
+                buildingCode: "CPH",
+                floor: "3",
+                level: 2,
+            },
+            {
+                buildingCode: "CPH",
+                floor: "4",
+                level: 3,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.539213, 43.470747],
+            type: "Point",
+        },
+        id: "38084c77f5824be78a94a75345d5e79f",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "DC",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "DC",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.541489, 43.472002],
+            [-80.541465, 43.471968],
+            [-80.541431, 43.47198],
+            [-80.541338, 43.471849],
+            [-80.541317, 43.471817],
+            [-80.541109, 43.471892],
+            ],
+            type: "LineString",
+        },
+        id: "390739eccf063866d0c1b3f2e1d586ca",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "EV1",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "EV2",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [-80.542876, 43.46803],
+            type: "Point",
+        },
+        id: "39ddaefc7c44389bbf7e1b83e467bc8c",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "E3",
+            floor: "3",
+            },
+            end: {
+            buildingCode: "E3",
+            floor: "3",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.541109, 43.471892],
+            [-80.541116, 43.471902],
+            [-80.541042, 43.471928],
+            [-80.540959, 43.471957],
+            [-80.54082, 43.471753],
+            [-80.540528, 43.471854],
+            [-80.540551, 43.471892],
+            [-80.540479, 43.471916],
+            ],
+            type: "LineString",
+        },
+        id: "3b1b5c9cbf2016dc8e647f95650713b9",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "walkway",
+            start: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.544394, 43.473297],
+            [-80.544484, 43.473427],
+            [-80.544461, 43.473436],
+            ],
+            type: "LineString",
+        },
+        id: "3b5f51034b82bad0e4914a5b4d115e45",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "EXP",
+                floor: "1",
+                level: 0,
+            },
+            {
+                buildingCode: "EXP",
+                floor: "2",
+                level: 1,
+            },
+            {
+                buildingCode: "EXP",
+                floor: "3",
+                level: 2,
+            },
+            {
+                buildingCode: "EXP",
+                floor: "4",
+                level: 3,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.5461, 43.47342],
+            type: "Point",
+        },
+        id: "40df18208f94a24b1672f2d8159c9a4f",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "STC",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.544045, 43.470503],
+            type: "Point",
+        },
+        id: "410a827f202415ccf796057923cf94d6",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "QNC",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "QNC",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.543669, 43.471158],
+            [-80.543598, 43.471184],
+            ],
+            type: "LineString",
+        },
+        id: "41e55d664444cec84c87366e664c8981",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "ESC",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "ESC",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.542978, 43.471703],
+            [-80.542574, 43.471109],
+            ],
+            type: "LineString",
+        },
+        id: "441c60f87dfe2274c3610260e2d673ff",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: 
+            {
+                buildingCode: "DWE",
+                floor: "2"
+            },
+            end: {
+                buildingCode: "CPH",
+                floor: "3"
+            },},
+        geometry: {
+            coordinates: [-80.538753, 43.470523],
+            type: "Point",
+        },
+        id: "445088b6fbb8594aff2a9bf302245be8",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "NH",
+                floor: "1",
+                level: 0,
+            },
+            {
+                buildingCode: "NH",
+                floor: "2",
+                level: 1,
+            },
+            {
+                buildingCode: "NH",
+                floor: "3",
+                level: 2,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.543119, 43.469689],
+            type: "Point",
+        },
+        id: "44a2bde9922340998d44afbd182246b0",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "MC",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "MC",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.543764, 43.472436],
+            [-80.543787, 43.472427],
+            [-80.543515, 43.472034],
+            [-80.543474, 43.471974],
+            [-80.543998, 43.471777],
+            ],
+            type: "LineString",
+        },
+        id: "459bd750b43cfb557d44b7a7ed0dd437",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "PAS",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "PAS",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.54243, 43.467294],
+            [-80.542571, 43.467242],
+            [-80.542391, 43.466978],
+            [-80.54229, 43.466953],
+            ],
+            type: "LineString",
+        },
+        id: "45dd15c517858c35b004cd8868b2636d",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "SCH",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "SCH",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.540366, 43.469252],
+            [-80.540265, 43.469287],
+            ],
+            type: "LineString",
+        },
+        id: "4653e03fdafa8df875ee14095763ece8",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "STC",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "STC",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.544045, 43.470503],
+            [-80.543899, 43.470558],
+            [-80.543881, 43.470531],
+            [-80.5433, 43.470747],
+            ],
+            type: "LineString",
+        },
+        id: "468470e14b9e185adfecd2fe743ef1f7",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "SLC",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "SLC",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.54505, 43.472099],
+            [-80.545084, 43.472148],
+            [-80.545199, 43.472106],
+            [-80.545265, 43.472064],
+            [-80.545308, 43.472017],
+            [-80.545335, 43.471961],
+            [-80.545361, 43.471897],
+            ],
+            type: "LineString",
+        },
+        id: "47ecd1a67e35970ee51b5a392d644e88",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "bridge",
+            start: {
+            buildingCode: "MC",
+            floor: "3",
+            },
+            end: {
+            buildingCode: "QNC",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.544045, 43.471761],
+            [-80.543901, 43.471548],
+            ],
+            type: "LineString",
+        },
+        id: "48a4bfaebc91805380924fde54a65beb",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "ERC",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.544461, 43.473436],
+            type: "Point",
+        },
+        id: "49aa65b754a1770164c2300b3796d8b5",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "walkway",
+            start: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.543111, 43.472747],
+            [-80.543097, 43.472725],
+            [-80.543183, 43.472691],
+            [-80.543193, 43.472602],
+            ],
+            type: "LineString",
+        },
+        id: "4a5b32f9f50343e1ed0c75b2350dd88f",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "walkway",
+            start: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.545, 43.472116],
+            [-80.544994, 43.472108],
+            [-80.544616, 43.472244],
+            [-80.544516, 43.472281],
+            [-80.544436, 43.472237],
+            [-80.544372, 43.472262],
+            ],
+            type: "LineString",
+        },
+        id: "4ad25fc0456ae0a1750ec273cea32e14",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "C2",
+            floor: "B",
+            },
+            end: {
+            buildingCode: "C2",
+            floor: "B",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.543307, 43.472111],
+            [-80.543127, 43.472177],
+            [-80.543119, 43.472165],
+            ],
+            type: "LineString",
+        },
+        id: "4bedb4fed6c9fcbb543265a235bd69bb",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "B1",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "ESC",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [-80.542986, 43.470976],
+            type: "Point",
+        },
+        id: "4c06831a15c52ce6e67fc7fcadadb713",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "ML",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.542917, 43.469093],
+            type: "Point",
+        },
+        id: "4d48a3d91cd4e058a333736d70924306",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "QNC",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "QNC",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.543901, 43.471548],
+            [-80.543796, 43.471398],
+            [-80.543756, 43.47141],
+            [-80.543598, 43.471184],
+            [-80.54355, 43.471113],
+            ],
+            type: "LineString",
+        },
+        id: "4f17ced1a4569edd618b94fe8f5e6163",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "QNC",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "QNC",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.543796, 43.471398],
+            [-80.544124, 43.471275],
+            ],
+            type: "LineString",
+        },
+        id: "4f6c26a7a227e483e5acaa5291f9e9dd",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "HH",
+                floor: "1",
+                level: 0,
+            },
+            {
+                buildingCode: "HH",
+                floor: "2",
+                level: 1,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.541742, 43.468125],
+            type: "Point",
+        },
+        id: "5006e689a5f57f27f60947b9dc96ccf3",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "walkway",
+            start: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.545456, 43.473893],
+            [-80.545404, 43.474023],
+            [-80.545417, 43.474089],
+            [-80.545488, 43.474122],
+            [-80.54558, 43.474103],
+            [-80.545662, 43.474213],
+            [-80.545981, 43.474696],
+            [-80.546187, 43.475001],
+            [-80.546119, 43.47515],
+            [-80.54602, 43.475188],
+            [-80.546002, 43.475251],
+            [-80.546099, 43.475387],
+            [-80.54602, 43.475414],
+            ],
+            type: "LineString",
+        },
+        id: "50cfb5c478315ec5ced67956e35f1edb",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "ML",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.542561, 43.469037],
+            type: "Point",
+        },
+        id: "536e373e8a5353fa3ed5100c9165ef74",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "BMH",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.545256, 43.473566],
+            type: "Point",
+        },
+        id: "545821ea6bd7a44affcd5de3e010fd24",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "QNC",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.544488, 43.471137],
+            type: "Point",
+        },
+        id: "551b518c52a5d29447df8549830bf7d3",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "SCH",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.540328, 43.469383],
+            type: "Point",
+        },
+        id: "5548b43ed51869f805bac59fe02fd3cf",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "AL",
+                floor: "B",
+                level: 0,
+            },
+            {
+                buildingCode: "AL",
+                floor: "1",
+                level: 1,
+            },
+            {
+                buildingCode: "AL",
+                floor: "2",
+                level: 2,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.541934, 43.468825],
+            type: "Point",
+        },
+        id: "557c3e6c3151513bab2718c570f05fde",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "ERC",
+                floor: "1",
+                level: 0,
+            },
+            {
+                buildingCode: "ERC",
+                floor: "2",
+                level: 1,
+            },
+            {
+                buildingCode: "ERC",
+                floor: "3",
+                level: 2,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.544461, 43.473436],
+            type: "Point",
+        },
+        id: "559159d4ff59d7152920a2397968efff",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "MC",
+                floor: "1",
+                level: 0,
+            },
+            {
+                buildingCode: "MC",
+                floor: "2",
+                level: 1,
+            },
+            {
+                buildingCode: "MC",
+                floor: "3",
+                level: 2,
+            },
+            {
+                buildingCode: "MC",
+                floor: "4",
+                level: 3,
+            },
+            {
+                buildingCode: "MC",
+                floor: "5",
+                level: 4,
+            },
+            {
+                buildingCode: "MC",
+                floor: "6",
+                level: 5,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.543764, 43.472436],
+            type: "Point",
+        },
+        id: "55fc714eec88d337be89a7dc853a6b0a",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "DP",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.542127, 43.469521],
+            type: "Point",
+        },
+        id: "564d936f1095ad10ea21f01c0b58a339",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "MC",
+            floor: "3",
+            },
+            end: {
+            buildingCode: "MC",
+            floor: "3",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.5444, 43.472302],
+            [-80.544318, 43.472332],
+            [-80.544291, 43.472294],
+            [-80.544265, 43.472256],
+            ],
+            type: "LineString",
+        },
+        id: "578f3b6be64d143f47305c1ae9162559",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "MC",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "MC",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.543739, 43.472531],
+            [-80.54381, 43.472504],
+            [-80.543764, 43.472436],
+            ],
+            type: "LineString",
+        },
+        id: "584b9efd60aa6b3c2dc6e7b9404bbd3f",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "MKV",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.55175, 43.471197],
+            type: "Point",
+        },
+        id: "588e3776f5e6ceacb8db7494e5b0e23d",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "EV1",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "EV1",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.542907, 43.468073],
+            [-80.542876, 43.46803],
+            [-80.542859, 43.468006],
+            ],
+            type: "LineString",
+        },
+        id: "58a130f501bb38afb87ee62c1f6cbfc0",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "RCH",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "RCH",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.541076, 43.470248],
+            [-80.540851, 43.470324],
+            ],
+            type: "LineString",
+        },
+        id: "597ca6d21c906aa35391b6b9b4d59d4f",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "SLC",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.545366, 43.47262],
+            type: "Point",
+        },
+        id: "5a4f4e1996223d9b1d5031dea4b0b819",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "CMH",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.536299, 43.470354],
+            type: "Point",
+        },
+        id: "5a872fb8c5cd64cb7b7df59f12b39425",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "DC",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "DC",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.54237, 43.472626],
+            [-80.542262, 43.47247],
+            [-80.542417, 43.472414],
+            ],
+            type: "LineString",
+        },
+        id: "5b75982d5a016153c02cb97ca4792d35",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "MC",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.544372, 43.472262],
+            type: "Point",
+        },
+        id: "5c5bbcd36ab7dc259c5504834faf5bf2",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: 
+            {
+                buildingCode: "EIT",
+                floor: "2",
+                level: 1,
+            },
+            end: {
+                buildingCode: "PHY",
+                floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [-80.541941, 43.471334],
+            type: "Point",
+        },
+        id: "5d2e822b91ed9588813584208448dc92",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "EV3",
+                floor: "1",
+                level: 0,
+            },
+            {
+                buildingCode: "EV3",
+                floor: "2",
+                level: 1,
+            },
+            {
+                buildingCode: "EV3",
+                floor: "3",
+                level: 2,
+            },
+            {
+                buildingCode: "EV3",
+                floor: "4",
+                level: 3,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.543373, 43.468175],
+            type: "Point",
+        },
+        id: "5d9901a06435ecb95765402fddb1d7eb",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "EIT",
+            floor: "3",
+            },
+            end: {
+            buildingCode: "EIT",
+            floor: "3",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.541703, 43.471592],
+            [-80.541934, 43.471508],
+            [-80.541839, 43.471369],
+            [-80.541941, 43.471334],
+            [-80.542399, 43.471168],
+            ],
+            type: "LineString",
+        },
+        id: "5fd8477633d6152e4a0a72a6018f424a",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "NH",
+                floor: "1",
+                level: 0,
+            },
+            {
+                buildingCode: "NH",
+                floor: "2",
+                level: 1,
+            },
+            {
+                buildingCode: "NH",
+                floor: "3",
+                level: 2,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.543541, 43.469677],
+            type: "Point",
+        },
+        id: "607896788949b5876fb56ea0299b2bfc",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "EIT",
+                floor: "3",
+                level: 2,
+            },
+            {
+                buildingCode: "EIT",
+                floor: "4",
+                level: 3,
+            },
+            {
+                buildingCode: "EIT",
+                floor: "5",
+                level: 4,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.54207, 43.471702],
+            type: "Point",
+        },
+        id: "62686b8fd518f0c9b197a0c0478664fd",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "HH",
+                floor: "2",
+                level: 1,
+            },
+            {
+                buildingCode: "HH",
+                floor: "3",
+                level: 2,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.541615, 43.468036],
+            type: "Point",
+        },
+        id: "637b3f3bbb76dc743f6c5f3e04bf0511",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "walkway",
+            start: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.54205, 43.469441],
+            [-80.54159, 43.469432],
+            [-80.541231, 43.469423],
+            [-80.541024, 43.46942],
+            [-80.540914, 43.469439],
+            [-80.540456, 43.469574],
+            ],
+            type: "LineString",
+        },
+        id: "64a77ea60d275b94d4934aa8ae459637",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "E6",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "E6",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.538799, 43.473206],
+            [-80.538671, 43.473252],
+            ],
+            type: "LineString",
+        },
+        id: "65cea154687b23ccec39b74300500849",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "tunnel",
+            start: {
+            buildingCode: "EV1",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "HH",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.542129, 43.468305],
+            [-80.542001, 43.468119],
+            ],
+            type: "LineString",
+        },
+        id: "665b31c1360c2e52d9c0b30d5621a12f",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "DP",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "DP",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.542254, 43.469706],
+            [-80.542127, 43.469521],
+            ],
+            type: "LineString",
+        },
+        id: "67c6e7d1c1b1d8e82be78848166b0355",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "E2",
+            floor: "3",
+            },
+            end: {
+            buildingCode: "E2",
+            floor: "3",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.540234, 43.470901],
+            [-80.539964, 43.470512],
+            [-80.540006, 43.470497],
+            [-80.539876, 43.470304],
+            [-80.539845, 43.470316],
+            [-80.539811, 43.470268],
+            ],
+            type: "LineString",
+        },
+        id: "67d031a4a4a8d7c9eae87f41aa181d2e",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "HH",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "HH",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.541742, 43.468125],
+            [-80.541668, 43.468018],
+            [-80.541615, 43.468036],
+            ],
+            type: "LineString",
+        },
+        id: "69294835ca58a64bb2650335003beae6",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "DWE",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "DWE",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.539685, 43.470083],
+            [-80.539295, 43.470222],
+            [-80.539336, 43.47028],
+            [-80.538872, 43.470447],
+            [-80.53889, 43.470473],
+            [-80.538753, 43.470523],
+            ],
+            type: "LineString",
+        },
+        id: "69fc50e3c33cf7955d53d7a41d13833b",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "C2",
+                floor: "B",
+                level: 0,
+            },
+            {
+                buildingCode: "C2",
+                floor: "1",
+                level: 1,
+            },
+            {
+                buildingCode: "C2",
+                floor: "2",
+                level: 2,
+            },
+            {
+                buildingCode: "C2",
+                floor: "3",
+                level: 3,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.543119, 43.472165],
+            type: "Point",
+        },
+        id: "6a6fd59d17874e69e66a6ca1e4b9dd3b",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "bridge",
+            start: {
+            buildingCode: "E7",
+            floor: "3",
+            },
+            end: {
+            buildingCode: "E6",
+            floor: "3",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.539349, 43.473011],
+            [-80.539238, 43.473053],
+            [-80.539086, 43.473096],
+            [-80.538958, 43.473147],
+            ],
+            type: "LineString",
+        },
+        id: "6a9a0bc7e4c71d9080c644bbfb2f61c6",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "CMH",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "CMH",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.536299, 43.470354],
+            [-80.536219, 43.470426],
+            [-80.535891, 43.470234],
+            ],
+            type: "LineString",
+        },
+        id: "6aa4c2e7e9cc70cc2af0d5ebcd2b34d4",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "E7",
+                floor: "1",
+                level: 0,
+            },
+            {
+                buildingCode: "E7",
+                floor: "2",
+                level: 1,
+            },
+            {
+                buildingCode: "E7",
+                floor: "3",
+                level: 2,
+            },
+            {
+                buildingCode: "E7",
+                floor: "4",
+                level: 3,
+            },
+            {
+                buildingCode: "E7",
+                floor: "5",
+                level: 4,
+            },
+            {
+                buildingCode: "E7",
+                floor: "6",
+                level: 5,
+            },
+            {
+                buildingCode: "E7",
+                floor: "7",
+                level: 6,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.539582, 43.472921],
+            type: "Point",
+        },
+        id: "6ad647ba74651568e0c5d7399473d87a",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "DC",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "DC",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.543353, 43.472696],
+            [-80.54323, 43.472741],
+            [-80.543172, 43.472763],
+            [-80.543193, 43.472793],
+            [-80.542624, 43.472995],
+            [-80.542465, 43.472764],
+            [-80.54237, 43.472626],
+            ],
+            type: "LineString",
+        },
+        id: "6bb969903ebd56a2b4912566f8780b3d",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "RCH",
+                floor: "1",
+                level: 0,
+            },
+            {
+                buildingCode: "RCH",
+                floor: "2",
+                level: 1,
+            },
+            {
+                buildingCode: "RCH",
+                floor: "3",
+                level: 2,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.541076, 43.470248],
+            type: "Point",
+        },
+        id: "6bfb09145044053d10212a5ed38278c1",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "walkway",
+            start: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.545256, 43.473566],
+            [-80.544793, 43.472915],
+            [-80.544724, 43.472773],
+            [-80.544806, 43.472577],
+            [-80.54477, 43.472507],
+            [-80.544616, 43.472244],
+            ],
+            type: "LineString",
+        },
+        id: "6c81049f41bebdaa2002f79283292399",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "tunnel",
+            start: {
+            buildingCode: "AL",
+            floor: "B",
+            },
+            end: {
+            buildingCode: "SCH",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.541822, 43.468665],
+            [-80.541777, 43.468598],
+            [-80.54114, 43.468816],
+            [-80.540534, 43.469026],
+            ],
+            type: "LineString",
+        },
+        id: "6d4fdb5002be7d0ffcdd257d5ef2d5d6",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "walkway",
+            start: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.542859, 43.468006],
+            [-80.542693, 43.467775],
+            ],
+            type: "LineString",
+        },
+        id: "6ddea1b96aca7b98232984674a3a85bc",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "SLC",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "SLC",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.54505, 43.472099],
+            [-80.545, 43.472116],
+            ],
+            type: "LineString",
+        },
+        id: "6e2c123ac8cae587bb64df1a8a2596df",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "QNC",
+                floor: "B",
+                level: 0,
+            },
+            {
+                buildingCode: "QNC",
+                floor: "1",
+                level: 1,
+            },
+            {
+                buildingCode: "QNC",
+                floor: "2",
+                level: 2,
+            },
+            {
+                buildingCode: "QNC",
+                floor: "3",
+                level: 3,
+            },
+            {
+                buildingCode: "QNC",
+                floor: "4",
+                level: 4,
+            },
+            {
+                buildingCode: "QNC",
+                floor: "5",
+                level: 5,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.543669, 43.471158],
+            type: "Point",
+        },
+        id: "6f7c50d9165e8a37abc7a873ae4b7886",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "EIT",
+            floor: "3",
+            },
+            end: {
+            buildingCode: "EIT",
+            floor: "3",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.54207, 43.471702],
+            [-80.541934, 43.471508],
+            ],
+            type: "LineString",
+        },
+        id: "73b33a703f0429934d8cba6e4edd614c",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "SCH",
+                floor: "1",
+                level: 0,
+            },
+            {
+                buildingCode: "SCH",
+                floor: "2",
+                level: 1,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.540366, 43.469252],
+            type: "Point",
+        },
+        id: "74874e09cbe24712c75160528503bc19",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "E3",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.541173, 43.472123],
+            type: "Point",
+        },
+        id: "7559304b8cd2dfba45842858255d0ec9",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "DWE",
+                floor: "1",
+                level: 0,
+            },
+            {
+                buildingCode: "DWE",
+                floor: "2",
+                level: 1,
+            },
+            {
+                buildingCode: "DWE",
+                floor: "3",
+                level: 2,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.540495, 43.469798],
+            type: "Point",
+        },
+        id: "76673f7ea1fa04e71ab7be77b58ab5ea",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "EV3",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "EV3",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.543373, 43.468175],
+            [-80.543491, 43.468133],
+            ],
+            type: "LineString",
+        },
+        id: "775db4b299d8d37d98ec8640ef13cfa8",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "QNC",
+                floor: "B",
+                level: 0,
+            },
+            {
+                buildingCode: "QNC",
+                floor: "1",
+                level: 1,
+            },
+            {
+                buildingCode: "QNC",
+                floor: "2",
+                level: 2,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.544124, 43.471275],
+            type: "Point",
+        },
+        id: "7818e6356722221306a607e9fbd2e46e",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "BMH",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "BMH",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.545699, 43.47343],
+            [-80.545275, 43.473595],
+            ],
+            type: "LineString",
+        },
+        id: "78c37b06ee898b841ae664f7ac4c98b0",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "M3",
+            floor: "3",
+            },
+            end: {
+            buildingCode: "M3",
+            floor: "3",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.544005, 43.472974],
+            [-80.544133, 43.473163],
+            ],
+            type: "LineString",
+        },
+        id: "791debf2796ed3529cf87bae12e04ff1",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "B2",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "B2",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.543459, 43.47098],
+            [-80.543362, 43.47084],
+            [-80.5433, 43.470747],
+            ],
+            type: "LineString",
+        },
+        id: "79dcd086db9e195a147559c29fd83ac6",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "STC",
+            floor: "3",
+            },
+            end: {
+            buildingCode: "STC",
+            floor: "3",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.5433, 43.470747],
+            [-80.543347, 43.470729],
+            [-80.543267, 43.470612],
+            [-80.543709, 43.470453],
+            [-80.543691, 43.470426],
+            ],
+            type: "LineString",
+        },
+        id: "7ecc4195f91b9a77c75f8d08437843c4",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "MC",
+            floor: "3",
+            },
+            end: {
+            buildingCode: "MC",
+            floor: "3",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.544265, 43.472256],
+            [-80.543764, 43.472436],
+            ],
+            type: "LineString",
+        },
+        id: "80b07ff4d89dd2e9dedbcfa49eddaa07",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "bridge",
+            start: {
+            buildingCode: "STC",
+            floor: "3",
+            },
+            end: {
+            buildingCode: "NH",
+            floor: "3",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.543691, 43.470426],
+            [-80.543727, 43.470252],
+            ],
+            type: "LineString",
+        },
+        id: "813affe1c812523042013ebb459ee8c2",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "QNC",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "QNC",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.544124, 43.471275],
+            [-80.544488, 43.471137],
+            ],
+            type: "LineString",
+        },
+        id: "81516b4400da5191270b3ad18ed2c3c0",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "PHY",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "PHY",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.541654, 43.470476],
+            [-80.541675, 43.470506],
+            [-80.541552, 43.470554],
+            ],
+            type: "LineString",
+        },
+        id: "839b3800f635df42e6b685e0ad60ab59",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "NH",
+            floor: "3",
+            },
+            end: {
+            buildingCode: "NH",
+            floor: "3",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.543727, 43.470252],
+            [-80.543768, 43.470053],
+            [-80.543627, 43.46985],
+            [-80.543625, 43.469793],
+            [-80.543541, 43.469677],
+            [-80.543457, 43.469561],
+            [-80.543119, 43.469689],
+            ],
+            type: "LineString",
+        },
+        id: "83abefa21fa30edef88dce8e29c1b4cc",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "EV1",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "EV1",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.542458, 43.468309],
+            [-80.542507, 43.468379],
+            ],
+            type: "LineString",
+        },
+        id: "8531b5ee0c875519d86989d316ed9ecf",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "EXP",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "EXP",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.54588, 43.47331],
+            [-80.545922, 43.473375],
+            [-80.545931, 43.473443],
+            [-80.545955, 43.473476],
+            [-80.54619, 43.473801],
+            ],
+            type: "LineString",
+        },
+        id: "86564d057c04521d86e4c410c769c2a7",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "E5",
+            floor: "3",
+            },
+            end: {
+            buildingCode: "E5",
+            floor: "3",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.539872, 43.472442],
+            [-80.540082, 43.472728],
+            [-80.539945, 43.47278],
+            [-80.539816, 43.472831],
+            ],
+            type: "LineString",
+        },
+        id: "868c4796350aeac84c805a5adfdc9d34",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "PHY",
+            floor: "3",
+            },
+            end: {
+            buildingCode: "PHY",
+            floor: "3",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.541429, 43.4706],
+            [-80.541552, 43.470554],
+            ],
+            type: "LineString",
+        },
+        id: "87bd16767e7e386d811fc3ce6fb13464",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "M3",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "M3",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.544133, 43.473163],
+            [-80.544265, 43.473115],
+            [-80.544394, 43.473297],
+            ],
+            type: "LineString",
+        },
+        id: "880b20633090badedfae63dab6e7cbb2",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "DWE",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "DWE",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.538753, 43.470523],
+            [-80.538797, 43.470506],
+            [-80.538823, 43.470543],
+            [-80.538859, 43.470529],
+            ],
+            type: "LineString",
+        },
+        id: "8905dc71bf10270ede50b6d92059d03b",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "EIT",
+                floor: "1",
+                level: 0,
+            },
+            {
+                buildingCode: "EIT",
+                floor: "2",
+                level: 1,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.541964, 43.47141],
+            type: "Point",
+        },
+        id: "898efced4fe8ec69a146479c242b717b",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "V1",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.549645, 43.471864],
+            type: "Point",
+        },
+        id: "89fc158c162bbff29943469a938264bb",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "walkway",
+            start: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.55074, 43.470739],
+            [-80.550818, 43.470761],
+            [-80.550962, 43.470837],
+            [-80.551143, 43.470968],
+            [-80.551232, 43.470941],
+            [-80.551297, 43.470954],
+            [-80.55135, 43.470997],
+            [-80.55143, 43.471111],
+            [-80.551529, 43.471205],
+            ],
+            type: "LineString",
+        },
+        id: "8bdff7e38f22502e94ebc88c63f935b2",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "E2",
+                floor: "1",
+                level: 0.5,
+            },
+            {
+                buildingCode: "E2",
+                floor: "2",
+                level: 1.5,
+            },
+            {
+                buildingCode: "E2",
+                floor: "3",
+                level: 2.5,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.540937, 43.470649],
+            type: "Point",
+        },
+        id: "8c5583e426ab0ab40d23072bac2dbf2a",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "walkway",
+            start: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.542503, 43.469273],
+            [-80.542596, 43.469397],
+            [-80.542726, 43.469435],
+            [-80.542868, 43.469445],
+            [-80.542953, 43.469427],
+            ],
+            type: "LineString",
+        },
+        id: "8cd733051e7e4279ca127f9537efba2b",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "AL",
+            floor: "B",
+            },
+            end: {
+            buildingCode: "AL",
+            floor: "B",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.541822, 43.468665],
+            [-80.541934, 43.468825],
+            ],
+            type: "LineString",
+        },
+        id: "8dc6a0234934f0e699e036273e2ab177",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "PHY",
+                floor: "1",
+                level: 0,
+            },
+            {
+                buildingCode: "PHY",
+                floor: "2",
+                level: 1,
+            },
+            {
+                buildingCode: "PHY",
+                floor: "3",
+                level: 2,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.541552, 43.470554],
+            type: "Point",
+        },
+        id: "8e16490f3b37e68c82823b58adeb2709",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "B1",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "B1",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.543114, 43.47113],
+            [-80.543214, 43.471093],
+            [-80.5431, 43.470934],
+            ],
+            type: "LineString",
+        },
+        id: "8e58176487f23ea260c2fe96107116d8",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "SLC",
+                floor: "1",
+                level: 0,
+            },
+            {
+                buildingCode: "SLC",
+                floor: "2",
+                level: 1,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.545361, 43.471897],
+            type: "Point",
+        },
+        id: "8ecbaa99f93e51e189e99c38a0f37975",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "C2",
+            floor: "3",
+            },
+            end: {
+            buildingCode: "C2",
+            floor: "3",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.542752, 43.472294],
+            [-80.543119, 43.472165],
+            ],
+            type: "LineString",
+        },
+        id: "8ff1b1a3d3c4d12bc47a8bfcfa4409d4",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "EV1",
+                floor: "1",
+                level: 0,
+            },
+            {
+                buildingCode: "EV1",
+                floor: "2",
+                level: 1,
+            },
+            {
+                buildingCode: "EV1",
+                floor: "3",
+                level: 2,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.542458, 43.468309],
+            type: "Point",
+        },
+        id: "9519c2252e0a7c0a04c6dc0449a6cafe",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "bridge",
+            start: {
+            buildingCode: "E2",
+            floor: "3",
+            },
+            end: {
+            buildingCode: "DWE",
+            floor: "3",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.539811, 43.470268],
+            [-80.539685, 43.470083],
+            ],
+            type: "LineString",
+        },
+        id: "95b5df23f5bd28241a6aac3001f65fb1",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "PAS",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.542693, 43.467775],
+            type: "Point",
+        },
+        id: "96a473c014340f9268d4b50739c673ac",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "MKV",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "MKV",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.553087, 43.471068],
+            [-80.551844, 43.471188],
+            [-80.55175, 43.471197],
+            ],
+            type: "LineString",
+        },
+        id: "9b0b4ebd759fe2d82acc5c4217f769bc",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "EXP",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.54619, 43.473801],
+            type: "Point",
+        },
+        id: "9bacf86b6290a1924c7c722e15a3b694",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "E2",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "E2",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.540606, 43.471308],
+            [-80.540307, 43.470875],
+            [-80.540234, 43.470901],
+            [-80.539693, 43.471096],
+            ],
+            type: "LineString",
+        },
+        id: "9c82ac33c1e9d17fe5d7acba5580726d",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "DC",
+                floor: "1",
+                level: 0,
+            },
+            {
+                buildingCode: "DC",
+                floor: "2",
+                level: 1,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.54323, 43.472741],
+            type: "Point",
+        },
+        id: "9ce1eea6937bd76bbf281a9037ec5f83",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "DC",
+            floor: "3",
+            },
+            end: {
+            buildingCode: "DC",
+            floor: "3",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.543353, 43.472696],
+            [-80.543172, 43.472763],
+            [-80.543192, 43.472793],
+            [-80.542624, 43.472994],
+            [-80.542465, 43.472764],
+            ],
+            type: "LineString",
+        },
+        id: "a03547e928eaca87e972e22b14a8a47a",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "tunnel",
+            start: {
+            buildingCode: "C2",
+            floor: "B",
+            },
+            end: {
+            buildingCode: "MC",
+            floor: "B",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.543307, 43.472111],
+            [-80.543479, 43.472047],
+            ],
+            type: "LineString",
+        },
+        id: "a221f464e82eafb7230f396c6cc81aa7",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "M3",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.544394, 43.473297],
+            type: "Point",
+        },
+        id: "a4e6efbc0a27e2a4d168ed1ce0f011e6",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "B2",
+                floor: "1",
+                level: 0,
+            },
+            {
+                buildingCode: "B2",
+                floor: "2",
+                level: 1,
+            },
+            {
+                buildingCode: "B2",
+                floor: "3",
+                level: 2,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.543362, 43.47084],
+            type: "Point",
+        },
+        id: "a5d95a67b0f1ee83f7967774ba1d239f",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: 
+            {
+                buildingCode: "STC",
+                floor: "B1",
+            },
+            end: {
+                buildingCode: "B2",
+                floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [-80.5433, 43.470747],
+            type: "Point",
+        },
+        id: "a892cb3aa61fb3087b28084c2fae71d2",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "ERC",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.544656, 43.473725],
+            type: "Point",
+        },
+        id: "a9faa44f8d2b5bfd1f1633b47ed15bb2",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "HH",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "HH",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.541809, 43.468103],
+            [-80.541742, 43.468125],
+            [-80.541793, 43.468204],
+            ],
+            type: "LineString",
+        },
+        id: "aa7e2298e745debc61448fe2c955b2f7",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "HH",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "HH",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.542001, 43.468119],
+            [-80.541954, 43.468052],
+            ],
+            type: "LineString",
+        },
+        id: "ac38812880753c6765445c6ec6071e7c",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "tunnel",
+            start: {
+            buildingCode: "ML",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "EV1",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.542474, 43.468791],
+            [-80.542391, 43.468666],
+            [-80.542289, 43.468512],
+            ],
+            type: "LineString",
+        },
+        id: "ac7eec8cfb568968d3eaf4b5674b6d3a",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "bridge",
+            start: {
+            buildingCode: "QNC",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "B2",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.54355, 43.471113],
+            [-80.543459, 43.47098],
+            ],
+            type: "LineString",
+        },
+        id: "acd8a7391c7ba88639d11b6524224bf4",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "M3",
+                floor: "1",
+                level: 0,
+            },
+            {
+                buildingCode: "M3",
+                floor: "2",
+                level: 1,
+            },
+            {
+                buildingCode: "M3",
+                floor: "3",
+                level: 2,
+            },
+            {
+                buildingCode: "M3",
+                floor: "4",
+                level: 3,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.544133, 43.473163],
+            type: "Point",
+        },
+        id: "ad0a1def6d9b0de3bce9ecbd4049bc10",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "AL",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.541925, 43.46901],
+            type: "Point",
+        },
+        id: "ad46bfe0841f03e956f11afb75130f26",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "SLC",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.545701, 43.471602],
+            type: "Point",
+        },
+        id: "ae0f08c37819bcac0b5e717c61e12b49",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: 
+            {
+                buildingCode: "E2",
+                floor: "1",
+                level: 0,
+            },
+            end: {
+                buildingCode: "E3",
+                floor: "2",
+                level: 0.5,
+            },
+        },
+        geometry: {
+            coordinates: [-80.540606, 43.471308],
+            type: "Point",
+        },
+        id: "ae87288ca7da09c9168ca0b92021fe57",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "MKV",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.553087, 43.471068],
+            type: "Point",
+        },
+        id: "af4e15e7660d45256ac7ae862910a928",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "OPT",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.54602, 43.475414],
+            type: "Point",
+        },
+        id: "b07d7047aa13bbe4384238ef440d1d70",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "DC",
+                floor: "1",
+                level: 0,
+            },
+            {
+                buildingCode: "DC",
+                floor: "2",
+                level: 1,
+            },
+            {
+                buildingCode: "DC",
+                floor: "3",
+                level: 2,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.542465, 43.472764],
+            type: "Point",
+        },
+        id: "b0d1423adff64148c7ceaccbaddc445d",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "ERC",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "ERC",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.544656, 43.473725],
+            [-80.544461, 43.473436],
+            ],
+            type: "LineString",
+        },
+        id: "b1190e538e4b893fd2b00754568e519f",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "M3",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "M3",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.544003, 43.472963],
+            [-80.544133, 43.473163],
+            ],
+            type: "LineString",
+        },
+        id: "b379688aef835dca7a39af98a80f24a6",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "ESC",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "ESC",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.542986, 43.470976],
+            [-80.542574, 43.471109],
+            [-80.542399, 43.471168],
+            ],
+            type: "LineString",
+        },
+        id: "b4c03e78b448f9c7680c5b397f2ac97e",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "E3",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "E3",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.541109, 43.471892],
+            [-80.541031, 43.47192],
+            ],
+            type: "LineString",
+        },
+        id: "b60a1f7beb3f4b599d2f3be6c078324b",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "DC",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "DC",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.541338, 43.471849],
+            [-80.54153, 43.471778],
+            ],
+            type: "LineString",
+        },
+        id: "b852eadc3a89054e5042d02197929d53",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "B1",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "B1",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.54325, 43.470881],
+            [-80.5431, 43.470934],
+            [-80.542986, 43.470976],
+            ],
+            type: "LineString",
+        },
+        id: "ba6cba9add025c2eb2febd337fb9d930",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "OPT",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "OPT",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.545944, 43.47544],
+            [-80.54602, 43.475414],
+            ],
+            type: "LineString",
+        },
+        id: "ba732de9c77c9d0486ba6c0031c2519b",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "CPH",
+            floor: "3",
+            },
+            end: {
+            buildingCode: "CPH",
+            floor: "3",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.539693, 43.471096],
+            [-80.539613, 43.471124],
+            [-80.539537, 43.471017],
+            [-80.539424, 43.471057],
+            [-80.539213, 43.470747],
+            [-80.539124, 43.470621],
+            [-80.538927, 43.470694],
+            [-80.538797, 43.470506],
+            [-80.538753, 43.470523],
+            ],
+            type: "LineString",
+        },
+        id: "baade31f760ac500adf11ca1b08b39d5",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "EIT",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.542173, 43.471786],
+            type: "Point",
+        },
+        id: "bb241d24cf1f38dfe28e9dffbf371880",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "walkway",
+            start: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.553508, 43.470171],
+            [-80.553054, 43.470178],
+            [-80.55298, 43.470213],
+            [-80.552072, 43.470389],
+            [-80.551364, 43.470522],
+            [-80.551148, 43.470589],
+            [-80.55074, 43.470739],
+            [-80.550517, 43.470827],
+            [-80.55034, 43.470926],
+            [-80.550031, 43.471005],
+            [-80.549693, 43.471114],
+            [-80.549356, 43.471172],
+            [-80.548975, 43.471283],
+            [-80.548616, 43.471355],
+            [-80.548276, 43.471436],
+            [-80.547867, 43.471485],
+            [-80.547654, 43.471515],
+            [-80.547438, 43.471535],
+            [-80.547352, 43.47156],
+            ],
+            type: "LineString",
+        },
+        id: "bb95a567161703208887cc3c09be8884",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "EV1",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "EV2",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [-80.54288, 43.468083],
+            type: "Point",
+        },
+        id: "bc84bc0414b5c645a78cff3b9af8407d",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "OPT",
+                floor: "1",
+                level: 0,
+            },
+            {
+                buildingCode: "OPT",
+                floor: "2",
+                level: 1,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.545944, 43.47544],
+            type: "Point",
+        },
+        id: "bd6e07839e9496592f3fa6dfcad0cac6",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "MC",
+                floor: "1",
+                level: 0,
+            },
+            {
+                buildingCode: "MC",
+                floor: "2",
+                level: 1,
+            },
+            {
+                buildingCode: "MC",
+                floor: "3",
+                level: 2,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.543998, 43.471777],
+            type: "Point",
+        },
+        id: "bd907ddfeeb5acf0410d536d654c744c",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "REV",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.553819, 43.47015],
+            type: "Point",
+        },
+        id: "bdbd5a84bca7c4c4d789e3b7a20ef2ac",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "walkway",
+            start: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.543755, 43.472721],
+            [-80.543776, 43.472589],
+            [-80.543739, 43.472531],
+            ],
+            type: "LineString",
+        },
+        id: "c09da635aa2ab592191c3b1be6e7235a",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "DC",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.543111, 43.472747],
+            type: "Point",
+        },
+        id: "c4d9e4125f58e8e1336c3f2df26f612f",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "B2",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "B2",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.543362, 43.47084],
+            [-80.54325, 43.470881],
+            ],
+            type: "LineString",
+        },
+        id: "c5cc53e184b9133fd62fb79540de4deb",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "ML",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "ML",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.542809, 43.468947],
+            [-80.542708, 43.468985],
+            ],
+            type: "LineString",
+        },
+        id: "c60ac5123130171eeb23045502f4fa9a",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: 
+            {
+                buildingCode: "ESC",
+                floor: "1",
+            },
+            end: {
+                buildingCode: "EIT",
+                floor: "3",
+            },
+        },
+        geometry: {
+            coordinates: [-80.542399, 43.471168],
+            type: "Point",
+        },
+        id: "c68ee3de65aa32e6639c3c612a1100b6",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "bridge",
+            start: {
+            buildingCode: "DC",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "DC",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.541649, 43.472233],
+            [-80.541489, 43.472002],
+            ],
+            type: "LineString",
+        },
+        id: "c6d1d7800dae0bee63e6c038eb227dcb",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "EXP",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "BMH",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [-80.545699, 43.47343],
+            type: "Point",
+        },
+        id: "c7f33cdc7d3e323f0100a52dc148e19b",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "MC",
+                floor: "B",
+                level: 0,
+            },
+            {
+                buildingCode: "MC",
+                floor: "1",
+                level: 1,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.543479, 43.472047],
+            type: "Point",
+        },
+        id: "c8f19623b77d92d8b7db9ae82ee0e15f",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "NH",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.543119, 43.469689],
+            type: "Point",
+        },
+        id: "c9efc7657aef3985c5282c67e6182555",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: 
+            {
+                buildingCode: "DC",
+                floor: "1",
+            },
+            end: 
+            {
+                buildingCode: "E3",
+                floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [-80.541109, 43.471892],
+            type: "Point",
+        },
+        id: "cbc868e4da0354926e70ed46ede29edf",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "MC",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "MC",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.544372, 43.472262],
+            [-80.544291, 43.472294],
+            ],
+            type: "LineString",
+        },
+        id: "cbd7db019a0d0cb2a06b8b45e0cd1a58",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "TC",
+                floor: "B",
+                level: 0,
+            },
+            {
+                buildingCode: "TC",
+                floor: "1",
+                level: 1,
+            },
+            {
+                buildingCode: "TC",
+                floor: "2",
+                level: 2,
+            },
+            {
+                buildingCode: "TC",
+                floor: "3",
+                level: 3,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.541216, 43.468928],
+            type: "Point",
+        },
+        id: "cc44a87bdfb07bec614896853d2e62ea",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "open",
+            start: {
+            buildingCode: "PAC",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "SLC",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [-80.54564, 43.472441],
+            type: "Point",
+        },
+        id: "cdc6795a86d1e81081d265230dbdfee9",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "EXP",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "EXP",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.545931, 43.473443],
+            [-80.545811, 43.473458],
+            [-80.545699, 43.47343],
+            ],
+            type: "LineString",
+        },
+        id: "cecbf0574baa931426813ab3e94a11cb",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "PAS",
+                floor: "1",
+                level: 0,
+            },
+            {
+                buildingCode: "PAS",
+                floor: "2",
+                level: 1,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.54229, 43.466953],
+            type: "Point",
+        },
+        id: "cfe18cfe64b3cdb09d1595b7eee18223",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "DWE",
+                floor: "1",
+                level: 0,
+            },
+            {
+                buildingCode: "DWE",
+                floor: "2",
+                level: 1,
+            },
+            {
+                buildingCode: "DWE",
+                floor: "3",
+                level: 2,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.539685, 43.470083],
+            type: "Point",
+        },
+        id: "d0fc1d340e8a25521ae19143f683e7ee",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "EV3",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "EV3",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.543463, 43.468092],
+            [-80.543491, 43.468133],
+            [-80.543551, 43.468112],
+            ],
+            type: "LineString",
+        },
+        id: "d25c4b8de9eee06fc4e79198e672dd14",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "walkway",
+            start: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.543599, 43.472654],
+            [-80.543776, 43.472589],
+            ],
+            type: "LineString",
+        },
+        id: "d31bed0418682f7e878c18a23e2541f9",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "SLC",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "SLC",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.545361, 43.471897],
+            [-80.545098, 43.471842],
+            [-80.545315, 43.471301],
+            ],
+            type: "LineString",
+        },
+        id: "d40e81d7c8f72809710a09906450c0fb",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "HH",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "HH",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.541954, 43.468052],
+            [-80.541809, 43.468103],
+            ],
+            type: "LineString",
+        },
+        id: "d86b871a367100057cc1f6ab494fc9d3",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "B2",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "B1",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [-80.54325, 43.470881],
+            type: "Point",
+        },
+        id: "d96ceabc9f726c7e8549e3688df440d3",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "SLC",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "SLC",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.545306, 43.472476],
+            [-80.5454, 43.472607],
+            [-80.545366, 43.47262],
+            ],
+            type: "LineString",
+        },
+        id: "d9f13933bb0ee24c7c4aa30edc07b60c",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "walkway",
+            start: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.541654, 43.470476],
+            [-80.541615, 43.470404],
+            [-80.541704, 43.47031],
+            [-80.541743, 43.470211],
+            [-80.541772, 43.47009],
+            ],
+            type: "LineString",
+        },
+        id: "db22698e17f76f30b16e0e351b3c0369",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "PHY",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.541654, 43.470476],
+            type: "Point",
+        },
+        id: "dc934201fbdf7a8cbd005c1359539c95",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "E3",
+                floor: "3",
+                level: 2,
+            },
+            {
+                buildingCode: "E3",
+                floor: "4",
+                level: 3,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.541102, 43.472106],
+            type: "Point",
+        },
+        id: "dcf582371b64ba971c1045cbc15f87cb",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "MC",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "MC",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.543479, 43.472047],
+            [-80.543515, 43.472034],
+            ],
+            type: "LineString",
+        },
+        id: "dcfd4a4be22d87856bb8bb4e5c2b9672",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "EXP",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "EXP",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.545955, 43.473476],
+            [-80.5461, 43.47342],
+            ],
+            type: "LineString",
+        },
+        id: "dd98ff2c9ff0dd942d9a241cc7c9dfca",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "E6",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.538671, 43.473252],
+            type: "Point",
+        },
+        id: "ddb561e0a1f4591127ac8941a4f7e579",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "tunnel",
+            start: {
+            buildingCode: "AL",
+            floor: "B",
+            },
+            end: {
+            buildingCode: "EV1",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.541934, 43.468825],
+            [-80.542391, 43.468666],
+            [-80.542289, 43.468512],
+            ],
+            type: "LineString",
+        },
+        id: "e1ba938fdf4fed292b1faf1ed60933af",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "BMH",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "BMH",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.545256, 43.473566],
+            [-80.545275, 43.473595],
+            [-80.54529, 43.473615],
+            [-80.545267, 43.473669],
+            [-80.545216, 43.473799],
+            [-80.545472, 43.473852],
+            [-80.545456, 43.473893],
+            ],
+            type: "LineString",
+        },
+        id: "e36bee86a53eee5a5608a89841a4a284",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "M3",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.544003, 43.472963],
+            type: "Point",
+        },
+        id: "e3714929926cb17c16f463d2696ec5e6",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "SLC",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.545315, 43.471301],
+            type: "Point",
+        },
+        id: "e58e6a4d6960d67acf0495b4358aaf18",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "DC",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "DC",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.542442, 43.472672],
+            [-80.542409, 43.472684],
+            [-80.542465, 43.472764],
+            [-80.54259, 43.472943],
+            [-80.543111, 43.472747],
+            ],
+            type: "LineString",
+        },
+        id: "e5b01b17713d60a15f9e923bfb09d677",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "E3",
+                floor: "2",
+                level: 1,
+            },
+            {
+                buildingCode: "E3",
+                floor: "3",
+                level: 2,
+            },
+            {
+                buildingCode: "E3",
+                floor: "4",
+                level: 3,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.540479, 43.471916],
+            type: "Point",
+        },
+        id: "e71de6c70704547f45a9878c6a4a46ea",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "MC",
+                floor: "1",
+                level: 0,
+            },
+            {
+                buildingCode: "MC",
+                floor: "2",
+                level: 1,
+            },
+            {
+                buildingCode: "MC",
+                floor: "3",
+                level: 2,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.544291, 43.472294],
+            type: "Point",
+        },
+        id: "e81e0740e1c66a77a897a827d760c37f",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "walkway",
+            start: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.541925, 43.46901],
+            [-80.541951, 43.469083],
+            [-80.541976, 43.46925],
+            [-80.54207, 43.469434],
+            ],
+            type: "LineString",
+        },
+        id: "e9bf560a1ae2dba51aea2a7e0d11a4bb",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "SCH",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "SCH",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.540328, 43.469383],
+            [-80.540265, 43.469287],
+            [-80.540172, 43.469151],
+            [-80.540148, 43.469117],
+            ],
+            type: "LineString",
+        },
+        id: "ea20dc7377c664e0396d162817f6f6c3",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "SCH",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "SCH",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.540534, 43.469026],
+            [-80.540172, 43.469151],
+            ],
+            type: "LineString",
+        },
+        id: "ea8c90349030bdacc856a6da9cff8826",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "EV1",
+                floor: "1",
+                level: 0,
+            },
+            {
+                buildingCode: "EV1",
+                floor: "2",
+                level: 1,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.542907, 43.468073],
+            type: "Point",
+        },
+        id: "eaa7cf7dcaac7f2afa6b1a752bb84364",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "HH",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "HH",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [-80.541954, 43.468052],
+            type: "Point",
+        },
+        id: "eb142cb5a5d6d72370696d8e96f6e657",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "MC",
+            floor: "3",
+            },
+            end: {
+            buildingCode: "MC",
+            floor: "3",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.544265, 43.472256],
+            [-80.543948, 43.471797],
+            [-80.543998, 43.471777],
+            [-80.544045, 43.471761],
+            ],
+            type: "LineString",
+        },
+        id: "eb52d08a2b44427e798ef8c1cc9d20ae",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "open",
+            start: {
+            buildingCode: "E5",
+            floor: "3",
+            },
+            end: {
+            buildingCode: "E7",
+            floor: "3",
+            },
+        },
+        geometry: {
+            coordinates: [-80.539816, 43.472831],
+            type: "Point",
+        },
+        id: "eba53acba6d4b5361bbcbfb995bbeda0",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "stairs",
+            connections: [
+            {
+                buildingCode: "BMH",
+                floor: "1",
+                level: 0,
+            },
+            {
+                buildingCode: "BMH",
+                floor: "2",
+                level: 1,
+            },
+            {
+                buildingCode: "BMH",
+                floor: "3",
+                level: 2,
+            },
+            ],
+        },
+        geometry: {
+            coordinates: [-80.545267, 43.473669],
+            type: "Point",
+        },
+        id: "ebefabef34048cb0d38ac0ea57d3e3b1",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "DC",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.542442, 43.472672],
+            type: "Point",
+        },
+        id: "ed4b3869d2145c3d9c72260f76055184",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "SLC",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.545, 43.472116],
+            type: "Point",
+        },
+        id: "edd4431aeffadf163eacc9c1a1e3e1ea",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "bridge",
+            start: {
+            buildingCode: "SLC",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "MC",
+            floor: "3",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.54505, 43.472099],
+            [-80.54442, 43.472328],
+            [-80.5444, 43.472302],
+            ],
+            type: "LineString",
+        },
+        id: "f07f5736c59da6d0e5dac1e2b54eab3f",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "E6",
+            floor: "3",
+            },
+            end: {
+            buildingCode: "E6",
+            floor: "3",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.538958, 43.473147],
+            [-80.538799, 43.473206],
+            ],
+            type: "LineString",
+        },
+        id: "f10a0d4f7a001b5efa423526d62fa1dd",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "V1",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "V1",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.550427, 43.471398],
+            [-80.550261, 43.471458],
+            [-80.550172, 43.471467],
+            [-80.55003, 43.471521],
+            [-80.550006, 43.471698],
+            [-80.549778, 43.471783],
+            [-80.549733, 43.471832],
+            [-80.549645, 43.471864],
+            ],
+            type: "LineString",
+        },
+        id: "f2b263a511d4db9d10a5f598cd7ba8c6",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "V1",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.550427, 43.471398],
+            type: "Point",
+        },
+        id: "f2d29fb73e590caefa57b56b112f2bb9",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "bridge",
+            start: {
+            buildingCode: "DC",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "EIT",
+            floor: "3",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.54153, 43.471778],
+            [-80.54177, 43.471689],
+            [-80.541703, 43.471592],
+            ],
+            type: "LineString",
+        },
+        id: "f3349c6266aa0c80a2a4b92406b95134",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "HH",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "HH",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [-80.541809, 43.468103],
+            type: "Point",
+        },
+        id: "f4f0550202d872bf848cf732139eb490",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "RCH",
+            floor: "3",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.541076, 43.470248],
+            type: "Point",
+        },
+        id: "f62c62d655bf0ea75febc155d59b2e44",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "bridge",
+            start: {
+            buildingCode: "C2",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "ESC",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.543068, 43.471836],
+            [-80.542978, 43.471703],
+            ],
+            type: "LineString",
+        },
+        id: "f86abf7803d6c9b4baaf4e212a3dab23",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start:
+            {
+                buildingCode: "E2",
+                floor: "1",
+            },
+            end:
+            {
+                buildingCode: "CPH",
+                floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [-80.539693, 43.471096],
+            type: "Point",
+        },
+        id: "f980e913454b34ebff757d5c9277df03",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "tunnel",
+            start: {
+            buildingCode: "RCH",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "DWE",
+            floor: "1",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.540707, 43.470112],
+            [-80.540495, 43.469798],
+            ],
+            type: "LineString",
+        },
+        id: "fb706cae321185c28bfaf7ce7d3ae923",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "walkway",
+            start: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.542917, 43.469093],
+            [-80.54308, 43.469138],
+            [-80.543162, 43.469189],
+            [-80.543257, 43.469307],
+            [-80.542953, 43.469427],
+            [-80.543086, 43.469631],
+            [-80.543119, 43.469689],
+            ],
+            type: "LineString",
+        },
+        id: "fbd476990133cf6c478919600d60169e",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "door",
+            start: {
+            buildingCode: "HH",
+            floor: "1",
+            },
+            end: {
+            buildingCode: "OUT",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [-80.541793, 43.468204],
+            type: "Point",
+        },
+        id: "fc0130be166c2f03fe2b08dcd61a237a",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "hallway",
+            start: {
+            buildingCode: "RCH",
+            floor: "2",
+            },
+            end: {
+            buildingCode: "RCH",
+            floor: "2",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.540849, 43.470407],
+            [-80.540802, 43.47034],
+            [-80.540851, 43.470324],
+            [-80.540707, 43.470112],
+            ],
+            type: "LineString",
+        },
+        id: "fe9f6d1a44df0d016f3acb58a92d5124",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "bridge",
+            start: {
+            buildingCode: "PHY",
+            floor: "3",
+            },
+            end: {
+            buildingCode: "E2",
+            floor: "3",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.541035, 43.470613],
+            [-80.540937, 43.470649],
+            ],
+            type: "LineString",
+        },
+        id: "ffc739877c35da4b7caa7f636fd3ca85",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "tunnel",
+            start: {
+            buildingCode: "DWE",
+            floor: "0",
+            },
+            end: {
+            buildingCode: "SCH",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.540495, 43.469798],
+            [-80.540585, 43.469765],
+            [-80.540456, 43.469574],
+            [-80.540328, 43.469383],
+            ],
+            type: "LineString",
+        },
+        id: "null",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "tunnel",
+            start: {
+            buildingCode: "DP",
+            floor: "B",
+            },
+            end: {
+            buildingCode: "ML",
+            floor: "B",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.542127, 43.469521],
+            [-80.54207, 43.469434],
+            [-80.542503, 43.469273],
+            [-80.542392, 43.469099],
+            [-80.542561, 43.469037],
+            ],
+            type: "LineString",
+        },
+        id: "null",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "tunnel",
+            start: {
+            buildingCode: "DP",
+            floor: "B",
+            },
+            end: {
+            buildingCode: "AL",
+            floor: "B",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.542127, 43.469521],
+            [-80.541925, 43.46901],
+            ],
+            type: "LineString",
+        },
+        id: "null",
+        },
+        {
+        type: "Feature",
+        properties: {
+            type: "tunnel",
+            start: {
+            buildingCode: "NH",
+            floor: "0",
+            },
+            end: {
+            buildingCode: "ML",
+            floor: "0",
+            },
+        },
+        geometry: {
+            coordinates: [
+            [-80.543119, 43.469689],
+            [-80.542855, 43.469792],
+            [-80.542392, 43.469099],
+            [-80.542561, 43.469037],
+            ],
+            type: "LineString",
+        },
+        id: "null",
+        },
+    ],
+    type: "FeatureCollection",
+}
+const pathsTest = {
+features: [
+    {
+    type: "Feature",
+    properties: {
+        type: "hallway",
+        start: {
+        buildingCode: "ML",
+        floor: "1",
+        },
+        end: {
+        buildingCode: "ML",
+        floor: "1",
+        },
+    },
+    geometry: {
+        coordinates: [
+        [-80.542474, 43.468791],
+        [-80.542495, 43.468823],
+        [-80.542576, 43.468794],
+        [-80.542708, 43.468985],
+        [-80.542805, 43.469132],
+        [-80.542917, 43.469093],
+        ],
+        type: "LineString",
+    },
+    id: "012de41e8a7de943de9784aea4cc51fd",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "door",
+        start: {
+        buildingCode: "SCH",
+        floor: "1",
+        },
+        end: {
+        buildingCode: "OUT",
+        floor: "0",
+        },
+    },
+    geometry: {
+        coordinates: [[-80.540148, 43.469117]],
+        type: "Point",
+    },
+    id: "029b730ebfdfde16764cbcc6c608e963",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "walkway",
+        start: {
+        buildingCode: "OUT",
+        floor: "0",
+        },
+        end: {
+        buildingCode: "OUT",
+        floor: "0",
+        },
+    },
+    geometry: {
+        coordinates: [
+        [-80.549645, 43.471864],
+        [-80.549058, 43.47207],
+        [-80.548692, 43.472182],
+        [-80.548602, 43.472199],
+        [-80.548303, 43.471997],
+        [-80.548054, 43.471931],
+        [-80.547959, 43.471866],
+        [-80.54791, 43.471778],
+        [-80.547736, 43.471675],
+        [-80.547618, 43.471633],
+        [-80.547352, 43.47156],
+        [-80.547262, 43.471576],
+        [-80.547169, 43.47162],
+        [-80.54694, 43.471568],
+        [-80.546502, 43.471646],
+        [-80.546394, 43.471665],
+        [-80.545975, 43.471578],
+        [-80.545833, 43.471627],
+        [-80.545701, 43.471602],
+        ],
+        type: "LineString",
+    },
+    id: "035031117345ebb9fa6578461b8bf76b",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "tunnel",
+        start: {
+        buildingCode: "TC",
+        floor: "B",
+        },
+        end: {
+        buildingCode: "SCH",
+        floor: "1",
+        },
+    },
+    geometry: {
+        coordinates: [
+        [-80.541151, 43.468832],
+        [-80.54114, 43.468816],
+        [-80.540534, 43.469026],
+        ],
+        type: "LineString",
+    },
+    id: "0618ed175f581b05bf90fcd9a939a86a",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "tunnel",
+        start: {
+        buildingCode: "AL",
+        floor: "B",
+        },
+        end: {
+        buildingCode: "TC",
+        floor: "B",
+        },
+    },
+    geometry: {
+        coordinates: [
+        [-80.541822, 43.468665],
+        [-80.541777, 43.468598],
+        [-80.54114, 43.468816],
+        [-80.541151, 43.468832],
+        ],
+        type: "LineString",
+    },
+    id: "1d48284316b2994dbb926c58dd4add50",
+    },
+],
+}
+const buildings = {
+features: [
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "EV1",
+        floors: ["1", "2", "3"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.542458, 43.468309],
+        type: "Point",
+    },
+    id: "0072dd16edd1422ecb48699b15abf840",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "RCH",
+        floors: ["2"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.540851, 43.470324],
+        type: "Point",
+    },
+    id: "06c5f76716cdafca29ec211d644bebf1",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "E2",
+        floors: ["1", "2", "3"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.540234, 43.470901],
+        type: "Point",
+    },
+    id: "0817abfd802604198efc3ceaade1e497",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "E3",
+        floors: ["3"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.541042, 43.471928],
+        type: "Point",
+    },
+    id: "08a8bcc2ea0ca2a86c4982c445a44298",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "E6",
+        floors: ["1", "2", "3", "4", "5"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.538799, 43.473206],
+        type: "Point",
+    },
+    id: "0eb65bfd57d560175afd60f9b7e0f21d",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "EIT",
+        floors: ["3"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.541941, 43.471334],
+        type: "Point",
+    },
+    id: "100c01717d915e1aedc954622e136b79",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "PHY",
+        floors: ["1", "2", "3"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.541552, 43.470554],
+        type: "Point",
+    },
+    id: "14096aef75884962f2a24096ad69809a",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "M3",
+        floors: ["1", "2", "3", "4"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.544133, 43.473163],
+        type: "Point",
+    },
+    id: "147fc5245085424aabb3f81f92215079",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "E3",
+        floors: ["2"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.541031, 43.47192],
+        type: "Point",
+    },
+    id: "1be1b796f819cddecdaf78149a75b5e7",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "EIT",
+        floors: ["1"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.542099, 43.47168],
+        type: "Point",
+    },
+    id: "1e1700a8e8d32bcb54b25f1dc8bdf001",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "SLC",
+        floors: ["3"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.545335, 43.471961],
+        type: "Point",
+    },
+    id: "2144ffcb56f6e09123839a17f0bf36a6",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "MC",
+        floors: ["1", "2", "3", "4", "5", "6"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.543764, 43.472436],
+        type: "Point",
+    },
+    id: "284b3e99ecb7850587b5b60d1154e522",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "SLC",
+        floors: ["B", "1", "2"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.545361, 43.471897],
+        type: "Point",
+    },
+    id: "2a6b9260e4334119b6efbc6d659cdfba",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "HH",
+        floors: ["1", "2"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.541742, 43.468125],
+        type: "Point",
+    },
+    id: "328ef57355e5fc78b092b539d0ae7344",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "BMH",
+        floors: ["1"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.545472, 43.473852],
+        type: "Point",
+    },
+    id: "36b8acadd1ea722b210058fcbb26468a",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "DWE",
+        floors: ["1", "2", "3"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.539685, 43.470083],
+        type: "Point",
+    },
+    id: "3b3b79c797a158ce6d4ccecc6beec959",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "STC",
+        floors: ["1"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.543881, 43.470531],
+        type: "Point",
+    },
+    id: "42eace0bfcc372e28365f4664dfee881",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "TC",
+        floors: ["B", "1", "2", "3"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.541216, 43.468928],
+        type: "Point",
+    },
+    id: "49004072376d926315f50f90ba2ee915",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "BMH",
+        floors: ["2", "3"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.545267, 43.473669],
+        type: "Point",
+    },
+    id: "4cc730e775f8929994d5a77ec6200e60",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "ESC",
+        floors: ["1", "3"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.542399, 43.471168],
+        type: "Point",
+    },
+    id: "50ebe2270e61140f76f56cb84e6b3ff3",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "EV3",
+        floors: ["2", "3", "4"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.543373, 43.468175],
+        type: "Point",
+    },
+    id: "5c40b549fe5047a0880842c4798accaa",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "PAS",
+        floors: ["1", "2"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.54229, 43.466953],
+        type: "Point",
+    },
+    id: "5cde51429119167d2f321db3d181b230",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "OPT",
+        floors: ["1", "2"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.545944, 43.47544],
+        type: "Point",
+    },
+    id: "5ee80b37f2bca2bb12bfda5127aa22c9",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "EV3",
+        floors: ["1"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.543491, 43.468133],
+        type: "Point",
+    },
+    id: "60117790c9d597f6af055bdbc84ebd56",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "HH",
+        floors: ["3"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.541615, 43.468036],
+        type: "Point",
+    },
+    id: "61f2910329c38f2ec38deaffdfb51925",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "ML",
+        floors: ["1", "2", "3"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.542809, 43.468947],
+        type: "Point",
+    },
+    id: "6467fdc1dbf749bb8c8cd1f602eef565",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "B2",
+        floors: ["1", "2", "3"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.543362, 43.47084],
+        type: "Point",
+    },
+    id: "65428f0a9380aab701fc4fa8a1b78e13",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "B1",
+        floors: ["1", "3"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.543114, 43.47113],
+        type: "Point",
+    },
+    id: "73fea671370274c428714b26acf68192",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "C2",
+        floors: ["B", "1", "2", "3"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.543119, 43.472165],
+        type: "Point",
+    },
+    id: "76363b21f093b58085a30dd88084b512",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "MKV",
+        floors: ["1"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.551844, 43.471188],
+        type: "Point",
+    },
+    id: "7846f7ddc94d4fd987c907bc13702a57",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "EXP",
+        floors: ["1"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.545931, 43.473443],
+        type: "Point",
+    },
+    id: "881dea7758f719589053af9d8f7b84fb",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "EV2",
+        floors: ["1"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.543282, 43.467836],
+        type: "Point",
+    },
+    id: "88340fe5a87c4bcdf79e38e9e2113647",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "REV",
+        floors: ["1"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.553819, 43.47015],
+        type: "Point",
+    },
+    id: "8a3c9cf5907e97b1906aecba7f63f1f6",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "EV2",
+        floors: ["2"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.542959, 43.467997],
+        type: "Point",
+    },
+    id: "8c84d648df9c038a115edbfe1c0057eb",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "E7",
+        floors: ["1", "2", "3", "4", "5", "6", "7"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.539582, 43.472921],
+        type: "Point",
+    },
+    id: "8d185da0e305124ad0907f02ff80641f",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "EIT",
+        floors: ["4", "5"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.54207, 43.471702],
+        type: "Point",
+    },
+    id: "9546ceb707d25f6415fbe3ccbdefe286",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "CPH",
+        floors: ["1", "2", "3", "4"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.539213, 43.470747],
+        type: "Point",
+    },
+    id: "a542d88e537a0f9a896d25acff4b1de3",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "ESC",
+        floors: ["2"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.542574, 43.471109],
+        type: "Point",
+    },
+    id: "aa3a97a1a35f60ebdf91172afe17a897",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "E5",
+        floors: ["1", "2", "3", "4", "5", "6"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.539945, 43.47278],
+        type: "Point",
+    },
+    id: "b08548865addb0bb5af3d6a37ccfcf2a",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "NH",
+        floors: ["1", "2", "3"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.543541, 43.469677],
+        type: "Point",
+    },
+    id: "b8641ee97601e6c8e383c90c57c0b327",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "PAC",
+        floors: ["1"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.54564, 43.472441],
+        type: "Point",
+    },
+    id: "bc9d6b278f0b4b34246f008ebfd8a60e",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "EXP",
+        floors: ["2", "3", "4"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.5461, 43.47342],
+        type: "Point",
+    },
+    id: "c06d1f2d5932863a1529e401f863fc14",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "ERC",
+        floors: ["1", "2", "3"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.544461, 43.473436],
+        type: "Point",
+    },
+    id: "cfa2318cb1386c874a5a47418a582102",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "DP",
+        floors: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.542254, 43.469706],
+        type: "Point",
+    },
+    id: "cfdb11426715dd72df51806eb149b7ef",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "STC",
+        floors: ["B1", "B2", "2", "3", "4", "5"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.5433, 43.470747],
+        type: "Point",
+    },
+    id: "d363e061e2c2deb3972a8d424b6bc2b2",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "CMH",
+        floors: ["1"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.535891, 43.470234],
+        type: "Point",
+    },
+    id: "d672a4a0fb3d7eaddabeea053f1e37b0",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "RCH",
+        floors: ["1", "3"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.541076, 43.470248],
+        type: "Point",
+    },
+    id: "d692ff131df77fc9a24374e4c9d56224",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "EIT",
+        floors: ["2"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.541964, 43.47141],
+        type: "Point",
+    },
+    id: "e3347f4733ac63ea6ef3f745335a8536",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "E3",
+        floors: ["4"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.541102, 43.472106],
+        type: "Point",
+    },
+    id: "e3cf7e819a14d876d7ca9546120b4eea",
+    },
+    {
+    type: "Feature",
+    properties: {
+        type: "building",
+        building: {
+        buildingCode: "B1",
+        floors: ["2"],
+        },
+    },
+    geometry: {
+        coordinates: [-80.5431, 43.470934],
+        type: "Point",
+    },
+id: "e72cb4f3a50e750d12af71eb2c79d28d",
+},
+{
+type: "Feature",
+properties: {
+type: "building",
+building: {
+    buildingCode: "PAS",
+    floors: ["3", "4"],
+},
+},
+geometry: {
+coordinates: [-80.542041, 43.467473],
+type: "Point",
+},
+id: "e73a579b5815183de586a00d56ccfe29",
+},
+{
+type: "Feature",
+properties: {
+type: "building",
+building: {
+    buildingCode: "SCH",
+    floors: ["1"],
+},
+},
+geometry: {
+coordinates: [-80.540265, 43.469287],
+type: "Point",
+},
+id: "f00cfdc2b7d3664f5292e34f57769312",
+},
+{
+type: "Feature",
+properties: {
+type: "building",
+building: {
+    buildingCode: "SCH",
+    floors: ["2"],
+},
+},
+geometry: {
+coordinates: [-80.540366, 43.469252],
+type: "Point",
+},
+id: "f17a5f413f979e05885edf4dae1cc1be",
+},
+{
+type: "Feature",
+properties: {
+type: "building",
+building: {
+    buildingCode: "AL",
+    floors: ["B", "1", "2"],
+},
+},
+geometry: {
+coordinates: [-80.541934, 43.468825],
+type: "Point",
+},
+id: "f2126034d91de8b7013cdb0033575e75",
+},
+{
+type: "Feature",
+properties: {
+type: "building",
+building: {
+    buildingCode: "DC",
+    floors: ["1", "2", "3"],
+},
+},
+geometry: {
+coordinates: [-80.542465, 43.472764],
+type: "Point",
+},
+id: "f923f87ec7f1d701aa9ec67440554cdb",
+},
+{
+type: "Feature",
+properties: {
+type: "building",
+building: {
+    buildingCode: "QNC",
+    floors: ["B", "1", "2"],
+},
+},
+geometry: {
+coordinates: [-80.544124, 43.471275],
+type: "Point",
+},
+id: "fdabdd687cbfe1d46b03e49b92d6801c",
+},
+{
+type: "Feature",
+properties: {
+type: "building",
+building: {
+    buildingCode: "V1",
+    floors: ["1"],
+},
+},
+geometry: {
+coordinates: [-80.55003, 43.471521],
+type: "Point",
+},
+id: "fe64efbb56b003ffdd0c64d49d95472a",
+},
+{
+type: "Feature",
+properties: {
+type: "building",
+building: {
+    buildingCode: "QNC",
+    floors: ["3", "4", "5"],
+},
+},
+geometry: {
+coordinates: [-80.543669, 43.471158],
+type: "Point",
+},
+id: "fe80929fdd7b80a7821f08df6711c1e7",
+},
+],
+type: "FeatureCollection",
+}
+const allBuildings = ["EV1", "RCH", "E2", "E3", "E6", "EIT", "PHY", "M3", "SLC", "MC", "HH", "BMH", "DWE", "STC", "TC", "ESC", "EV3", "PAS", "ML", "B2", "B1", "C2", "EXP", "EV2", "E7", "CPH", "E5", "NH", "PAC", "ERC", "DP", "SCH", "AL", "DC", "QNC"]
+
+function convertLatLng(x) {
+return { lat: x[1], lng: x[0] }
+}
+
+function convertLatLng2(coords, Startfloor) {
+let floor
+if (/^\d+$/.test(Startfloor)) {
+    floor = Number(Startfloor)
+} else if (Startfloor == "B") {
+    floor = -1
+}
+let res = []
+for (let i = 0; i < coords.length - 1; i++) {
+    res.push([floor, coords[i], coords[i + 1]])
+}
+
+
+return res
+}
+
+function makeGraph(paths) {
+    let graph = {}
+    let nodes = new Set()
+    for (feature of paths.features) {
+        if (
+        ["tunnel", "bridge", "walkway", "hallway", "door"].includes(feature.properties.type) &&
+        !(
+            feature.properties.start.buildingCode ==
+            feature.properties.end.buildingCode
+            || feature.properties.start.buildingCode == "OUT"
+            || feature.properties.end.buildingCode == "OUT"
+        )
+        ) {
+        //calculate distances
+        if (feature.properties.type == "door") {
+            var coords = [feature.geometry.coordinates, feature.geometry.coordinates]
+        }
+        else {var coords = feature.geometry.coordinates}
+        var distance = 0
+        for (let i = 0; i < coords.length - 1; i++) {
+            var from = turf.point(coords[i])
+            var to = turf.point(coords[i + 1])
+            var options = { units: "kilometers" }
+            distance += turf.distance(from, to, options) * 1000
+        }
+
+        var start = feature.properties.start.buildingCode
+        var end = feature.properties.end.buildingCode
+        nodes.add(start).add(end)
+
+        //add path to graph
+        graph = addToGraph(start, end, distance, graph)
+        graph = addToGraph(end, start, distance, graph)
+        }
+    }
+    graph = formalizeGraph(graph, nodes)
+    return graph
+}
+
+function addToGraph(start, end, distance, graph) {
+if (start in graph) {
+    graph[start][end] = distance
+} else {
+    graph[start] = {}
+    graph[start][end] = distance
+}
+return graph
+}
+
+function formalizeGraph(graph, nodes) {
+function addkeyToObj(obj, key, value) {
+    if (!(key in obj)) {
+    obj[key] = value
+    }
+}
+function isEmpty(obj) {
+    return Object.keys(obj).length === 0
+}
+for (node of nodes) {
+    //check layer 1
+    if (isEmpty(graph)) {
+    graph[node] = {}
+    graph[node][node] = Infinity
+    } else {
+    addkeyToObj(graph, node, { [node]: Infinity })
+    //check layer 2
+    for (subGraph in graph) {
+        if (isEmpty(subGraph)) {
+        subGraph[node] = Infinity
+        } else {
+        addkeyToObj(graph[subGraph], node, Infinity)
+        }
+    }
+    }
+}
+return graph
+}
+
+function dijkstra(graph, start) {
+    // Create an object to store the shortest distance from the start node to every other node
+    let distances = {}
+
+    // Create an array to store path of the shortest distance from the start node to every other node
+    let paths = { [start]: [] }
+
+    // A set to keep track of all visited nodes
+    let visited = new Set()
+
+    // Get all the nodes of the graph
+    let nodes = Object.keys(graph)
+
+    // Initially, set the shortest distance to every node as Infinity
+    for (let node of nodes) {
+        distances[node] = Infinity
+        paths[node] = []
+    }
+
+    // The distance from the start node to itself is 0
+    distances[start] = 0
+    paths[start] = [start]
+
+    // Loop until all nodes are visited
+    while (nodes.length) {
+        // Sort nodes by distance and pick the closest unvisited node
+        nodes.sort((a, b) => distances[a] - distances[b])
+        let closestNode = nodes.shift()
+
+        // If the shortest distance to the closest node is still Infinity, then remaining nodes are unreachable and we can break
+        if (distances[closestNode] === Infinity) break
+
+        // Mark the chosen node as visited
+        visited.add(closestNode)
+
+        // For each neighboring node of the current node
+        for (let neighbor in graph[closestNode]) {
+        // If the neighbor hasn't been visited yet
+        if (!visited.has(neighbor)) {
+            // Calculate tentative distance to the neighboring node
+            let newDistance = distances[closestNode] + graph[closestNode][neighbor]
+
+            // If the newly calculated distance is shorter than the previously known distance to this neighbor
+            if (newDistance < distances[neighbor]) {
+            // Update the shortest distance to this neighbor
+            distances[neighbor] = newDistance
+            paths[neighbor] = [].concat(paths[closestNode])
+            paths[neighbor].push(neighbor)
+            }
+        }
+        }
+    }
+
+    // Return the shortest distance from the start node to all nodes
+    return [distances, paths]
+}
+
+async function init() {
+
+    const { Map3DElement, Marker3DElement, Marker3DInteractiveElement, Polygon3DElement, AltitudeMode, Polyline3DElement } = await google.maps.importLibrary("maps3d")
+    
+    const map3DElement = new Map3DElement({
+        center: { lat: 43.467309, lng: -80.542458, altitude: 400 },
+        range: 1000,
+        tilt: 45,
+    })
+    map3DElement.defaultLabelsDisabled = true
+
+
+    polygonOptions = {
+        strokeColor: "rgba(255, 0, 255, 0.8)",
+        strokeWidth: 4,
+        fillColor: "rgba(0, 255, 255, 0.2)",
+        altitudeMode: AltitudeMode.ABSOLUTE,
+        extruded: true,
+        drawsOccludedSegments: true,
+    }
+
+    // 58 buildings
+    const markers = []
+    var number = document.getElementById("building1").value
+    document.getElementById("myText").innerHTML = number
+    var destination = document.getElementById("building2").value
+    document.getElementById("myText2").innerHTML = destination
+
+    function showSelectedBuilding(buildingsList) {
+        let visited = []
+        for (let i = 0; i < buildings.features.length; i++) {
+            if (
+            
+            number == "any" ||
+            buildingsList.includes(buildings.features[i].properties.building.buildingCode) ||
+            destination == "any"
+            ) {
+            const coords = convertLatLng(
+                buildings.features[i].geometry.coordinates,
+            )
+            const name =
+                buildings.features[i].properties.building.buildingCode
+
+            if (!visited.includes(name)) {
+                const Marker = new Marker3DElement({
+                position: coords,
+                label: name,
+                zIndex: 1,
+                })
+                markers.push(Marker)
+                visited.push(name)
+                map3DElement.append(Marker)
+            }
+            }
+        }
+        }
+
+    //showSelectedBuilding(allBuildings)
+
+    
+    function showPaths(paths, includeType) {
+    for (let i = 0; i < paths.features.length; i++) {
+        if (includeType.includes(paths.features[i].properties.type)) {
+        for (path of convertLatLng2(
+            paths.features[i].geometry.coordinates,
+            paths.features[i].properties.start.floor,
+        )) {
+            makeBridge(path, paths.features[i].properties.type)
+        }
+        }
+    }
+    }
+
+    function showSelectedPaths(shortestPath, allPaths) {
+        // make pairs from list of node names
+        function makePairs(lst) {
+            let pair = new Set()
+            for (let i = 0; i < lst.length - 1; i++) {
+                pair.add(new Set([lst[i], lst[i + 1]]))
+            }
+            if (lst.length <= 1) {
+                pair = "Found no paths"
+            }
+            return pair
+        }
+        let pairs = makePairs(shortestPath)
+
+        // if found no path
+        if (typeof pairs === "string") {
+        document.getElementById("myText").innerHTML = pairs
+        }
+
+
+        function isPathInPairs(path, pairs) {
+        let res = false
+        for (pair of pairs) {
+            if (
+            pair.has(path.properties.start.buildingCode) &&
+            pair.has(path.properties.end.buildingCode)
+            ) {
+            return true
+            }
+        }
+        return false
+        }
+        // for path in paths
+        // check path is in pair
+        // if yes, put the first in selected paths,  if not, continue
+        let selectedPath = []
+        for (path of allPaths.features) {
+            if (
+                path.properties.type != "stairs" &&
+                isPathInPairs(path, pairs)
+            ) {
+                selectedPath.push(path)
+            }
+        }
+        // showpath (selected paths)
+        showPaths(
+            {
+                features: selectedPath,
+                type: "FeatureCollection",
+            },
+            ["walkway", "tunnel", "bridge", "hallway"],
+        )
+    }
+
+    function makeBridge(lst, type) {
+        /*const floor = 1
+        const x1 = 43.468823
+        const x2 = 43.468791
+        const y1 = -80.542474
+        const y2 = -80.542495
+        const z1 = 2+floor*0.5
+        const z2 = z1 + 1*/
+        // recieve [floor, [y1,x1], [y2,x2]]
+        //                todo : [[floor1, floor2], listof [x, y]]
+        // calculate perpendicular m
+        const floor = lst[0]
+        const rad = 0.05
+        const xi1 = lst[1][1]
+        const xi2 = lst[2][1]
+        const yi1 = lst[1][0]
+        const yi2 = lst[2][0]
+        const dy = yi2 - yi1
+        const dx = xi1 - xi2
+        const x1 = xi1 + dx * rad
+        const x2 = xi2 + dx * rad
+        const x3 = xi2 - dx * rad
+        const x4 = xi1 - dx * rad
+        const y1 = yi1 + dy * rad
+        const y2 = yi2 + dy * rad
+        const y3 = yi2 - dy * rad
+        const y4 = yi1 - dy * rad
+        const z1 = 2 + floor * 2
+        const z2 = z1 + 1.5
+        
+        if (type == "tunnel") {
+            var colorStr = "rgba(255, 0, 255, 1)"
+            var colorFill = "rgba(0, 255, 255, 0.72)"
+        }
+        else if (type == "bridge") {
+            var colorStr = "rgba(230, 186, 149, 1)"
+            var colorFill = "rgba(162, 179, 139, 0.72)"
+        }
+        else {
+            var colorStr = "rgba(100, 236, 237, 1)"
+            var colorFill = "rgba(100, 236, 237, 0.72)"
+        }
+
+        const polygonDefault = {
+            strokeColor: colorStr,
+            strokeWidth: 4,
+            fillColor: colorFill,
+            altitudeMode: AltitudeMode.RELATIVE_TO_GROUND,
+            extruded: false,
+            drawsOccludedSegments: true,
+            zIndex: 10 - floor,
+        }
+
+
+        bridgeB1 = new google.maps.maps3d.Polygon3DElement(polygonDefault)
+
+        bridgeB1.outerCoordinates = [
+            { lat: x1, lng: y1, altitude: z1 },
+            { lat: x4, lng: y4, altitude: z1 },
+            { lat: x4, lng: y4, altitude: z2 },
+            { lat: x1, lng: y1, altitude: z2 },
+            { lat: x1, lng: y1, altitude: z1 },
+        ]
+
+        bridgeB2 = new google.maps.maps3d.Polygon3DElement(polygonDefault)
+
+        bridgeB2.outerCoordinates = [
+            { lat: x1, lng: y1, altitude: z1 },
+            { lat: x2, lng: y2, altitude: z1 },
+            { lat: x2, lng: y2, altitude: z2 },
+            { lat: x1, lng: y1, altitude: z2 },
+            { lat: x1, lng: y1, altitude: z1 },
+        ]
+
+        bridgeB3 = new google.maps.maps3d.Polygon3DElement(polygonDefault)
+
+        bridgeB3.outerCoordinates = [
+            { lat: x2, lng: y2, altitude: z1 },
+            { lat: x3, lng: y3, altitude: z1 },
+            { lat: x3, lng: y3, altitude: z2 },
+            { lat: x2, lng: y2, altitude: z2 },
+            { lat: x2, lng: y2, altitude: z1 },
+        ]
+
+        bridgeB4 = new google.maps.maps3d.Polygon3DElement(polygonDefault)
+
+        bridgeB4.outerCoordinates = [
+            { lat: x3, lng: y3, altitude: z1 },
+            { lat: x4, lng: y4, altitude: z1 },
+            { lat: x4, lng: y4, altitude: z2 },
+            { lat: x3, lng: y3, altitude: z2 },
+            { lat: x3, lng: y3, altitude: z1 },
+        ]
+
+        bridgeB5 = new google.maps.maps3d.Polygon3DElement(polygonDefault)
+
+        bridgeB5.outerCoordinates = [
+            { lat: x1, lng: y1, altitude: z1 },
+            { lat: x2, lng: y2, altitude: z1 },
+            { lat: x3, lng: y3, altitude: z1 },
+            { lat: x4, lng: y4, altitude: z1 },
+            { lat: x1, lng: y1, altitude: z1 },
+        ]
+
+        bridgeB6 = new google.maps.maps3d.Polygon3DElement(polygonDefault)
+
+        bridgeB6.outerCoordinates = [
+            { lat: x1, lng: y1, altitude: z2 },
+            { lat: x2, lng: y2, altitude: z2 },
+            { lat: x3, lng: y3, altitude: z2 },
+            { lat: x4, lng: y4, altitude: z2 },
+            { lat: x1, lng: y1, altitude: z2 },
+        ]
+
+
+        //map3DElement.append(towerPolygon)
+        //map3DElement.append(bridgeA)
+        map3DElement.append(bridgeB1)
+        map3DElement.append(bridgeB2)
+        map3DElement.append(bridgeB3)
+        map3DElement.append(bridgeB4)
+        map3DElement.append(bridgeB5)
+        map3DElement.append(bridgeB6)
+        }
+
+    function chooseShowPath() {
+            if (number == "any" || destination == "any") {
+                showPaths(pathsReal, ["tunnel", "bridge"])
+                showSelectedBuilding(allBuildings)
+            } else {
+                const buildingsInPath = dijkstra(makeGraph(pathsReal), number)[1][destination]
+                console.log(buildingsInPath)
+                showSelectedBuilding(buildingsInPath)
+                showSelectedPaths(buildingsInPath, pathsReal,)
+            }
+        }
+
+    chooseShowPath()
+    document.body.removeChild(document.body.lastElementChild)
+    document.body.appendChild(map3DElement);
+}
+
+init();
