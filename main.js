@@ -7090,23 +7090,23 @@ type: "FeatureCollection",
 const allBuildings = ["EV1", "RCH", "E2", "E3", "E6", "EIT", "PHY", "M3", "SLC", "MC", "HH", "BMH", "DWE", "STC", "TC", "ESC", "EV3", "PAS", "ML", "B2", "B1", "C2", "EXP", "EV2", "E7", "CPH", "E5", "NH", "PAC", "ERC", "DP", "SCH", "AL", "DC", "QNC"]
 
 function convertLatLng(x) {
-return { lat: x[1], lng: x[0] }
+    return { lat: x[1], lng: x[0] }
 }
 
 function convertLatLng2(coords, Startfloor) {
-let floor
-if (/^\d+$/.test(Startfloor)) {
-    floor = Number(Startfloor)
-} else if (Startfloor == "B") {
-    floor = -1
-}
-let res = []
-for (let i = 0; i < coords.length - 1; i++) {
-    res.push([floor, coords[i], coords[i + 1]])
-}
+    let floor
+    if (/^\d+$/.test(Startfloor)) {
+        floor = Number(Startfloor)
+    } else if (Startfloor == "B") {
+        floor = -1
+    }
+    let res = []
+    for (let i = 0; i < coords.length - 1; i++) {
+        res.push([floor, coords[i], coords[i + 1]])
+    }
 
 
-return res
+    return res
 }
 
 function makeGraph(paths) {
@@ -7245,7 +7245,6 @@ function dijkstra(graph, start) {
 }
 
 async function init() {
-
     const { Map3DElement, Marker3DElement, Marker3DInteractiveElement, Polygon3DElement, AltitudeMode, Polyline3DElement } = await google.maps.importLibrary("maps3d")
     
     const map3DElement = new Map3DElement({
