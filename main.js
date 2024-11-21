@@ -7509,6 +7509,7 @@ async function init() {
 
     chooseShowPath()
     document.body.removeChild(document.body.lastElementChild)
+    document.body.removeChild(document.body.lastElementChild)
     document.body.appendChild(map3DElement);
 }
 
